@@ -11,10 +11,10 @@ const Navbar = () => {
   const shouldReplace = pathname !== "/";
   
 const navLinks = [
-  { name: "Resume", href: "/resume" }, 
   { name: "Experience", href: "/experience" },
   { name: "Projects", href: "/projects" },
   { name: "Skills", href: "/skills" },
+  { name: "Resume", href: "/resume" }, 
 ];
 
   return (
