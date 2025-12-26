@@ -10,11 +10,12 @@ const Navbar = () => {
   const pathname = usePathname();
   const shouldReplace = pathname !== "/";
   
-  const navLinks = [
-    { name: "Experience", href: "/experience" },
-    { name: "Projects", href: "/projects" },
-    { name: "Skills", href: "/skills" },
-  ];
+const navLinks = [
+  { name: "Resume", href: "/resume" }, 
+  { name: "Experience", href: "/experience" },
+  { name: "Projects", href: "/projects" },
+  { name: "Skills", href: "/skills" },
+];
 
   return (
     <nav className="fixed top-0 w-full z-[100] bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
