@@ -1,5 +1,7 @@
 "use client";
 
+// hello this is navbar
+
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
