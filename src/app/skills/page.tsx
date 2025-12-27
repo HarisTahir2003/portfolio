@@ -15,9 +15,9 @@ const skillCategories = [
     skills: ["PyTorch", "LangChain", "HuggingFace", "Pandas", "NumPy", "Scikit-Learn"],
   },
   {
-    title: "Tools & DevOps",
+    title: "Tools",
     icon: <Terminal className="text-indigo-500" />,
-    skills: ["Git", "MLFlow", "Power BI", "MS Excel"],
+    skills: ["Git", "STATA", "Power BI", "MS Excel"],
   },
   {
     title: "Concepts",

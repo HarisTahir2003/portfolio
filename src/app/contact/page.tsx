@@ -10,7 +10,7 @@ export default function ContactPage() {
         {/* Left Side: Info */}
         <div>
           <p className="text-lg text-zinc-400 mb-10">
-            I'm currently looking for new opportunities or interesting projects to collaborate on. 
+            I'm currently looking for new opportunities or interesting projects to work on. 
             Whether you have a question or just want to say hi, I'll try my best to get back to you!
           </p>
           

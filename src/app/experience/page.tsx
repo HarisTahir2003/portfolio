@@ -2,7 +2,7 @@ import { Briefcase, Calendar, MapPin } from "lucide-react";
 
 const experiences = [
   {
-    role: "AI Researcher",
+    role: "Computer Vision and Medical Imaging Researcher",
     company: "Computer Vision and Graphics Lab, LUMS",
     duration: "Feb 2025 - Jun 2025",
     location: "Hybrid / Lahore, Pakistan",
@@ -14,7 +14,7 @@ const experiences = [
     color: "border-indigo-500"
   },
   {
-    role: "Web Development Intern",
+    role: "Full-Stack Web Development Intern",
     company: "Rozee",
     duration: "Jul 2024 - Aug 2024",
     location: "On-Site / Lahore, Pakistan",
@@ -26,7 +26,7 @@ const experiences = [
     color: "border-slate-700"
   },
     {
-        role: "Researcher",
+        role: "Research Analyst — Public Policy & Finance",
         company: "FINTRA, LUMS",
         duration: "Sep 2023 - Jun 2024",
         location: "Hybrid / Lahore, Pakistan",
@@ -38,7 +38,7 @@ const experiences = [
         color: "border-slate-700"
     },
     {
-        role: "Project Intern",
+        role: "Sustainability Research Intern",
         company: "World Wildlife Fund (WWF)",
         duration: "Jul 2021 - Aug 2021",
         location: "Remote / Lahore, Pakistan",
