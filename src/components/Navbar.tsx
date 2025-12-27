@@ -10,7 +10,6 @@ const Navbar = () => {
   const pathname = usePathname();
   const shouldReplace = pathname !== "/";
 
-  // Prevent scrolling when the mobile menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -56,7 +55,7 @@ const Navbar = () => {
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
-        {/* MOBILE SIDEBAR OVERLAY (The Darkening Background) */}
+        {/* MOBILE SIDEBAR OVERLAY */}
         <div 
           className={`fixed inset-0 bg-black/80 backdrop-blur-md transition-opacity duration-500 md:hidden z-[110] ${
             isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"

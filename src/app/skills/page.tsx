@@ -30,17 +30,17 @@ const certificates = [
   {
     title: "Data Analytics Essentials",
     issuer: "Cisco",
-    image: "/certificate1.jpg", // Replace with your file in /public
+    image: "/certificate1.jpg", 
   },
   {
     title: "Introduction to Cybersecurity",
     issuer: "Cisco",
-    image: "/certificate2.jpg", // Replace with your file in /public
+    image: "/certificate2.jpg", 
   },
   {
     title: "Introduction to Data Science",
     issuer: "Cisco",
-    image: "/certificate3.jpg", // Replace with your file in /public
+    image: "/certificate3.jpg", 
   },
 ];
 

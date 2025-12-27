@@ -9,10 +9,8 @@ export default function AboutPage() {
           
           {/* Left Side: Profile Photo */}
           <div className="relative w-64 h-64 md:w-80 md:h-80 flex-shrink-0">
-            {/* CHANGE 1: The decorative border behind becomes rounded-full */}
             <div className="absolute inset-0 rounded-full border-2 border-indigo-500 translate-x-4 translate-y-4 -z-10" />
             
-            {/* CHANGE 2: The actual image container becomes rounded-full */}
             <div className="w-full h-full rounded-full overflow-hidden bg-slate-800 border border-slate-700">
               <Image
                 src="/profile.jpeg"
@@ -46,7 +44,6 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* Quick Details List (No changes here) */}
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-medium">
               <div className="flex items-center justify-center md:justify-start gap-3 text-slate-300">
                 <div className="p-2 rounded-lg bg-slate-900 border border-slate-800">

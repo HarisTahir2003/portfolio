@@ -10,8 +10,6 @@ export default function ContactForm() {
 
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
-
-    // Replace 'YOUR_FORMSPREE_ID' with the ID you got from Formspree
     const response = await fetch("https://formspree.io/f/mjgvkjqy", {
       method: "POST",
       body: JSON.stringify(data),
@@ -23,7 +21,7 @@ export default function ContactForm() {
 
     if (response.ok) {
       setStatus('success');
-      (e.target as HTMLFormElement).reset(); // Clear form on success
+      (e.target as HTMLFormElement).reset(); 
     } else {
       setStatus('error');
     }
@@ -35,7 +33,7 @@ export default function ContactForm() {
         <label className="block text-sm font-medium mb-1 text-zinc-300">Name</label>
         <input 
           type="text" 
-          name="name" // Required for Formspree
+          name="name"
           required 
           className="w-full p-2 bg-zinc-800 border border-zinc-700 rounded-md focus:ring-2 focus:ring-indigo-500 outline-none text-white"
           placeholder="Name"
@@ -45,7 +43,7 @@ export default function ContactForm() {
         <label className="block text-sm font-medium mb-1 text-zinc-300">Email</label>
         <input 
           type="email" 
-          name="email" // Required for Formspree
+          name="email" 
           required 
           className="w-full p-2 bg-zinc-800 border border-zinc-700 rounded-md focus:ring-2 focus:ring-indigo-500 outline-none text-white"
           placeholder="Email"
@@ -54,7 +52,7 @@ export default function ContactForm() {
       <div>
         <label className="block text-sm font-medium mb-1 text-zinc-300">Message</label>
         <textarea 
-          name="message" // Required for Formspree
+          name="message" 
           required 
           rows={5} 
           className="w-full p-2 bg-zinc-800 border border-zinc-700 rounded-md focus:ring-2 focus:ring-indigo-500 outline-none text-white"

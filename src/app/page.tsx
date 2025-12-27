@@ -20,7 +20,6 @@ export default function Home() {
         
         {/* Navigation Buttons */}
         <div className="mt-10 flex flex-wrap gap-4 justify-center max-w-3xl mx-auto">
-          {/* Note: 'replace' removed to ensure "Back" button returns to this Landing Page */}
           <Link 
             href="/about" 
             className="px-8 py-4 bg-white text-slate-950 hover:bg-slate-200 rounded-full font-bold transition-all transform hover:scale-105"

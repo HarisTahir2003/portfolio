@@ -20,7 +20,6 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-slate-950 text-white min-h-screen flex flex-col">
         <Navbar />
-        {/* flex-grow ensures the footer stays at the bottom even on short pages */}
         <div className="flex-grow">
           {children}
         </div>

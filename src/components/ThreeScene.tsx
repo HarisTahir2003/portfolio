@@ -46,11 +46,10 @@ function NeuralNetwork() {
 
 export default function ThreeScene() {
   return (
-    /* This container MUST have h-screen and w-full */
     <div className="absolute inset-0 -z-10 h-screen w-full overflow-hidden bg-slate-950">
       <Canvas 
         camera={{ position: [0, 0, 1] }} 
-        style={{ height: '100vh', width: '100vw' }} // Forced style override
+        style={{ height: '100vh', width: '100vw' }} 
       >
         <NeuralNetwork />
       </Canvas>

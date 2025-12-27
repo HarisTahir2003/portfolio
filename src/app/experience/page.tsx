@@ -63,7 +63,6 @@ export default function ExperiencePage() {
         <div className="relative border-l-2 border-slate-800 ml-4 md:ml-6 space-y-16">
           {experiences.map((exp, index) => (
             <div key={index} className="relative pl-8 md:pl-12">
-              {/* Timeline Dot */}
               <div className={`absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-slate-950 border-4 ${exp.color} shadow-[0_0_10px_rgba(99,102,241,0.3)]`} />
               
               <div className="flex flex-col mb-4">

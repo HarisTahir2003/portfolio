@@ -3,7 +3,7 @@
 import { Download, FileText } from "lucide-react";
 
 export default function ResumePage() {
-  const resumeUrl = "/Haris_Resume.pdf"; // Path to your file in the public folder
+  const resumeUrl = "/Haris_Resume.pdf"; 
 
   return (
     <main className="min-h-screen pt-24 pb-12 px-6 bg-slate-950 flex flex-col items-center">
@@ -37,7 +37,6 @@ export default function ResumePage() {
         />
       </div>
 
-      {/* Mobile Hint */}
       <p className="mt-4 text-slate-500 text-sm md:hidden">
         Note: If the preview doesn't load on your mobile, please use the download button above.
       </p>

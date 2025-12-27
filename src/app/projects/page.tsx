@@ -25,7 +25,6 @@ const projects = [
     tags: ["K-Nearest Neighbors", "Regression Trees", "Python", "Time Series Analysis"],
     githubUrl: "https://github.com/HarisTahir2003/AI_Project",
   },
-  // Add more projects here
 ];
 
 export default function ProjectsPage() {
