@@ -1,28 +1,13 @@
 import Image from "next/image";
-import { User, MapPin, GraduationCap } from "lucide-react";
+import { MapPin, GraduationCap } from "lucide-react";
 
 export default function AboutPage() {
   return (
     <main className="min-h-screen pt-32 pb-16 px-6 bg-slate-950 text-slate-50">
       <div className="max-w-5xl mx-auto">
-        <div className="flex flex-col md:flex-row gap-12 items-center md:items-start">
+        <div className="flex flex-col md:flex-row gap-12 items-start">
           
-          {/* Left Side: Profile Photo */}
-          <div className="relative w-64 h-64 md:w-80 md:h-80 flex-shrink-0">
-            <div className="absolute inset-0 rounded-full border-2 border-indigo-500 translate-x-4 translate-y-4 -z-10" />
-            
-            <div className="w-full h-full rounded-full overflow-hidden bg-slate-800 border border-slate-700">
-              <Image
-                src="/profile.jpeg"
-                alt="Haris Profile Photo"
-                fill
-                className="object-cover transition-transform duration-500 hover:scale-110"
-                priority
-              />
-            </div>
-          </div>
-
-          {/* Right Side: Description (No changes here) */}
+          {/* Left Side: Description */}
           <div className="flex-1 text-center md:text-left">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               About <span className="text-indigo-500">Me</span>
@@ -59,6 +44,18 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
+
+          {/* Right Side: Rectangular Profile Image */}
+          <div className="relative w-full max-w-sm flex-shrink-0 aspect-[2/3]">
+            <Image
+              src="/img.jpg"
+              alt="Haris Profile Photo"
+              fill
+              className="rounded-lg object-cover shadow-lg transition-transform duration-500 hover:scale-105"
+              priority
+            />
+          </div>
+
 
         </div>
       </div>
