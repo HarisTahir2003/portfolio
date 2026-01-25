@@ -163,10 +163,39 @@ const projects: Project[] = [
     images: ["AIProj-1.png", "AIProj-2.png"],
     pdfs: [],
   },
+
+  // Project 5
+  {
+    category: "Data Science",
+    title: "Data-Driven Study of Socioeconomic Inequality and Career Aspirations",
+    description: "Predictive modeling of micro-robot trajectories in obstacle-dense environments.",
+    details: {
+      overview: "Co-led a team of four in the end-to-end development of a data science research project analyzing the impact of socioeconomic inequality on academic major selection and career aspirations among university students, using real survey data and statistical modeling to derive actionable insights.",
+      contributions: [
+        {
+          title: "Data Collection & Analysis",
+          content: "Designed and analyzed a multi-university survey using Python (pandas, NumPy) to explore relationships between income indicators, field of study, and career intent.",
+        },
+        {
+          title: "Statistical Modeling",
+          content: "Built and evaluated a logistic regression model with scikit-learn to assess the influence of socioeconomic factors on technical vs non-technical major choices.",
+        },
+        {
+          title: "Visualization & Reporting",
+          content: "Created data visualizations with Matplotlib and Seaborn and published analytical findings through well-documented Medium articles.",
+        },
+      ],
+    },
+    tags: ["Machine Learning", "pandas", "NumPy", "Seaborn", "Scikit-Learn", "Data Visualization", "Data Analysis"],
+    githubUrl: "https://github.com/HarisTahir2003/Data-Science-Project",
+    images: ["Data-1.png", "Data-2.png", "Data-3.png"],
+    pdfs: [{ name: "Project Report", url: "/DataScience_Project.pdf" }],
+  },
+
   // ... Add other projects here with the same structure
 ];
 
-const categories = ["All", "AI/ML", "DL/GenAI", "Software Engineering"];
+const categories = ["All", "AI/ML", "DL/GenAI", "Software Engineering", "Data Science"];
 
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState("All");
