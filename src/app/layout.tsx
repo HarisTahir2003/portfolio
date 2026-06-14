@@ -1,32 +1,58 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ThreeScene from "@/components/ThreeScene"; 
+import ThreeScene from "@/components/ThreeScene";
+import { profile } from "@/data/portfolio";
 
-const inter = Inter({ subsets: ["latin"] });
+// Clean, technical body font
+const sans = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+// Refined serif for headings — gives the editorial, "less-AI" feel.
+// Fraunces is a variable font; omitting `weight` loads the full axis range.
+const display = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+  axes: ["opsz"],
+});
 
 export const metadata: Metadata = {
-  title: "Haris | Portfolio",
-  description: "Senior CS Student specializing in ML and Data Science",
+  title: `${profile.name} — ${profile.title}`,
+  description: profile.shortBio,
+  openGraph: {
+    title: `${profile.name} — ${profile.title}`,
+    description: profile.shortBio,
+    type: "website",
+  },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en">
-      <body className="bg-slate-950 text-white min-h-screen flex flex-col relative">
-        {/* 1. Add the 3D Background here with fixed positioning */}
+    <html
+      lang="en"
+      className={`${sans.variable} ${display.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="bg-bg text-ink min-h-screen flex flex-col relative antialiased">
+        {/* Fixed 3D background (scroll-reactive, pointer-events disabled) */}
         <div className="fixed inset-0 z-0 pointer-events-none">
-          <ThreeScene /> 
+          <ThreeScene />
         </div>
 
-        {/* 2. Ensure content sits ABOVE the background */}
+        {/* Content sits above the background */}
         <div className="relative z-10 flex flex-col flex-grow">
           <Navbar />
-          <main className="flex-grow">
-            {children}
-          </main>
+          <main className="flex-grow">{children}</main>
           <Footer />
         </div>
       </body>

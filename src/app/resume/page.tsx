@@ -1,44 +1,46 @@
-"use client";
-
+import type { Metadata } from "next";
 import { Download, FileText } from "lucide-react";
+import { profile } from "@/data/portfolio";
+
+export const metadata: Metadata = {
+  title: `Resume — ${profile.name}`,
+  description: `Resume of ${profile.name}, ${profile.title}.`,
+};
 
 export default function ResumePage() {
-  const resumeUrl = "/Haris_Resume.pdf"; 
-
   return (
-    <main className="min-h-screen pt-24 pb-12 px-6 bg-slate-950 flex flex-col items-center">
-      {/* Header Section */}
-      <div className="max-w-4xl w-full flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+    <main className="flex min-h-screen flex-col items-center px-6 pb-16 pt-28">
+      {/* Header */}
+      <div className="mb-8 flex w-full max-w-5xl flex-col justify-between gap-4 md:flex-row md:items-center">
         <div>
-          <h1 className="text-4xl font-bold text-white flex items-center gap-3">
-            <FileText className="text-indigo-500" /> Resume
+          <h1 className="font-display flex items-center gap-3 text-3xl font-semibold text-ink md:text-4xl">
+            <FileText className="text-accent" /> Resume
           </h1>
-          <p className="text-slate-400 mt-2">
-            Senior CS Student | Machine Learning & Data Science
-          </p>
+          <p className="mt-2 text-ink-muted">{profile.title}</p>
         </div>
 
         <a
-          href={resumeUrl}
+          href={profile.resumeUrl}
           download="Haris_Resume.pdf"
-          className="flex items-center justify-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-semibold transition-all shadow-lg shadow-indigo-500/20 active:scale-95"
+          className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3 font-semibold text-bg transition-all hover:bg-accent-bright active:scale-[0.98]"
         >
           <Download size={20} />
           Download PDF
         </a>
       </div>
 
-      {/* PDF Preview Container */}
-      <div className="max-w-5xl w-full h-[75vh] bg-slate-900/50 rounded-2xl border border-slate-800 p-2 overflow-hidden shadow-2xl backdrop-blur-sm">
+      {/* Preview */}
+      <div className="h-[75vh] w-full max-w-5xl overflow-hidden rounded-2xl border border-border bg-bg-card p-2">
         <iframe
-          src={`${resumeUrl}#view=FitH`}
-          className="w-full h-full rounded-xl border-none"
-          title="Haris Resume Preview"
+          src={`${profile.resumeUrl}#view=FitH`}
+          className="h-full w-full rounded-xl border-none"
+          title={`${profile.name} resume preview`}
         />
       </div>
 
-      <p className="mt-4 text-slate-500 text-sm md:hidden">
-        Note: If the preview doesn't load on your mobile, please use the download button above.
+      <p className="mt-4 text-sm text-ink-faint md:hidden">
+        If the preview doesn&apos;t load on mobile, use the download button
+        above.
       </p>
     </main>
   );

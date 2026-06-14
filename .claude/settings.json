@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git clone *)",
+      "Bash(rm -rf /tmp/portfolio_clone && find src public -type f | sort 2>&1)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(echo \"started dev server, pid $!\")",
+      "Read(//tmp/**)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:3000/blog)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:3000/blog/understanding-rag)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:3000/resume)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code} -> %{redirect_url}\\\\n\" http://localhost:3000/about)",
+      "Bash(node -e \"console.log\\('node', process.version\\)\")",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(pkill -f \"next-server\")",
+      "Bash(echo \"dev pid $!\")",
+      "Bash(curl -s -o /dev/null -w \"home HTTP %{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(xargs kill -9)",
+      "Bash(node -e \"try{require.resolve\\('clsx'\\);console.log\\('clsx: yes'\\)}catch{console.log\\('clsx: NO'\\)} try{require.resolve\\('tailwind-merge'\\);console.log\\('tailwind-merge: yes'\\)}catch{console.log\\('tailwind-merge: NO'\\)}\")"
+    ],
+    "additionalDirectories": [
+      "/private/tmp/portfolio_clone"
+    ]
+  }
+}

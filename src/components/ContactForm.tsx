@@ -1,81 +1,113 @@
 "use client";
-import React, { useState } from 'react';
+
+import React, { useState } from "react";
+
+type Status = "idle" | "sending" | "success" | "error";
+
+const inputClass =
+  "w-full rounded-lg border border-border bg-bg px-3.5 py-2.5 text-ink placeholder:text-ink-faint outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-[var(--accent-ring)]";
 
 export default function ContactForm() {
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<Status>("idle");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus('sending');
+    setStatus("sending");
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
-    const response = await fetch("https://formspree.io/f/mjgvkjqy", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    });
 
-    if (response.ok) {
-      setStatus('success');
-      (e.target as HTMLFormElement).reset(); 
-    } else {
-      setStatus('error');
+    try {
+      const response = await fetch("https://formspree.io/f/mjgvkjqy", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full max-w-lg">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div>
-        <label className="block text-sm font-medium mb-1 text-zinc-300">Name</label>
-        <input 
-          type="text" 
+        <label
+          htmlFor="name"
+          className="mb-1.5 block text-sm font-medium text-ink-muted"
+        >
+          Name
+        </label>
+        <input
+          id="name"
+          type="text"
           name="name"
-          required 
-          className="w-full p-2 bg-zinc-800 border border-zinc-700 rounded-md focus:ring-2 focus:ring-indigo-500 outline-none text-white"
-          placeholder="Name"
+          required
+          placeholder="Your name"
+          className={inputClass}
         />
       </div>
+
       <div>
-        <label className="block text-sm font-medium mb-1 text-zinc-300">Email</label>
-        <input 
-          type="email" 
-          name="email" 
-          required 
-          className="w-full p-2 bg-zinc-800 border border-zinc-700 rounded-md focus:ring-2 focus:ring-indigo-500 outline-none text-white"
-          placeholder="Email"
+        <label
+          htmlFor="email"
+          className="mb-1.5 block text-sm font-medium text-ink-muted"
+        >
+          Email
+        </label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          required
+          placeholder="you@example.com"
+          className={inputClass}
         />
       </div>
+
       <div>
-        <label className="block text-sm font-medium mb-1 text-zinc-300">Message</label>
-        <textarea 
-          name="message" 
-          required 
-          rows={5} 
-          className="w-full p-2 bg-zinc-800 border border-zinc-700 rounded-md focus:ring-2 focus:ring-indigo-500 outline-none text-white"
-          placeholder="Write your message here..."
+        <label
+          htmlFor="message"
+          className="mb-1.5 block text-sm font-medium text-ink-muted"
+        >
+          Message
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          rows={5}
+          placeholder="Write your message here…"
+          className={`${inputClass} resize-y`}
         />
       </div>
-      
-      <button 
-        type="submit" 
-        disabled={status === 'sending'}
-        className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-md transition-all disabled:opacity-50 active:scale-95"
+
+      <button
+        type="submit"
+        disabled={status === "sending"}
+        className="mt-1 rounded-lg bg-accent px-4 py-2.5 font-semibold text-bg transition-all hover:bg-accent-bright active:scale-[0.98] disabled:opacity-50"
       >
-        {status === 'sending' ? 'Sending...' : 'Send Message'}
+        {status === "sending" ? "Sending…" : "Send Message"}
       </button>
 
-      {status === 'success' && (
-        <p className="text-green-400 text-sm animate-pulse">
-          ✓ Message sent! I'll get back to you soon.
+      {status === "success" && (
+        <p className="text-sm text-emerald-400">
+          ✓ Message sent — I&apos;ll get back to you soon.
         </p>
       )}
-      {status === 'error' && (
-        <p className="text-red-400 text-sm">
-          Oops! Something went wrong. Please try again or email me directly.
+      {status === "error" && (
+        <p className="text-sm text-red-400">
+          Something went wrong. Please try again or email me directly.
         </p>
       )}
     </form>

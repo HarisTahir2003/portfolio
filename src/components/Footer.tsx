@@ -1,52 +1,58 @@
 "use client";
 
-import { Github, Linkedin, Mail } from "lucide-react";
+import Link from "next/link";
+import Icon from "@/components/Icon";
+import { profile, sectionLinks, routeLinks } from "@/data/portfolio";
 
 export default function Footer() {
-  const socials = [
-    {
-      name: "GitHub",
-      href: "https://github.com/HarisTahir2003",
-      icon: <Github size={20} />,
-    },
-    {
-      name: "LinkedIn",
-      href: "https://www.linkedin.com/in/haristahirrana/",
-      icon: <Linkedin size={20} />,
-    },
-    {
-      name: "Email",
-      href: "mailto:haristahirrana@gmail.com",
-      icon: <Mail size={20} />,
-    },
-  ];
+  const links = [...sectionLinks, ...routeLinks];
 
   return (
-    <footer className="w-full bg-slate-950 border-t border-slate-800 py-8">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-        
-        {/* Branding/Copyright */}
-        <div className="text-slate-500 text-sm">
-          <span className="text-white font-semibold tracking-tighter">HARIS<span className="text-indigo-500">.AI</span></span>
-          <p className="mt-1">© 2025 Haris Tahir Rana. All rights reserved.</p>
+    <footer className="relative border-t border-border bg-bg pb-24 sm:pb-0">
+      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-12 md:flex-row md:items-center md:justify-between">
+        {/* Branding */}
+        <div>
+          <Link
+            href="/"
+            className="font-display text-lg font-semibold tracking-tight text-ink"
+          >
+            Haris<span className="text-accent">.</span>
+          </Link>
+          <p className="mt-2 text-sm text-ink-faint">
+            ©{" "}
+            <span suppressHydrationWarning>{new Date().getFullYear()}</span>{" "}
+            {profile.name}. All rights reserved.
+          </p>
         </div>
 
-        {/* Social Links */}
-        <div className="flex items-center gap-6">
-          {socials.map((social) => (
+        {/* Quick links */}
+        <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-muted">
+          {links.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="transition-colors hover:text-accent"
+            >
+              {link.name}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Socials */}
+        <div className="flex items-center gap-4">
+          {profile.social.map((s) => (
             <a
-              key={social.name}
-              href={social.href}
+              key={s.name}
+              href={s.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-indigo-400 transition-all transform hover:scale-110"
-              aria-label={social.name}
+              aria-label={s.name}
+              className="text-ink-muted transition-all hover:scale-110 hover:text-accent"
             >
-              {social.icon}
+              <Icon name={s.icon} size={20} />
             </a>
           ))}
         </div>
-
       </div>
     </footer>
   );
