@@ -5,7 +5,7 @@ import React, { useState } from "react";
 type Status = "idle" | "sending" | "success" | "error";
 
 const inputClass =
-  "w-full rounded-lg border border-border bg-bg px-3.5 py-2.5 text-ink placeholder:text-ink-faint outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-[var(--accent-ring)]";
+  "w-full rounded-lg border border-border bg-bg px-3.5 py-3 text-ink placeholder:text-ink-faint outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-[var(--accent-ring)]";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -95,7 +95,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="mt-1 rounded-lg bg-accent px-4 py-2.5 font-semibold text-bg transition-all hover:bg-accent-bright active:scale-[0.98] disabled:opacity-50"
+        className="mt-2 w-full rounded-lg bg-accent px-4 py-3 font-semibold text-white transition-all hover:bg-accent-bright active:scale-[0.99] disabled:opacity-50"
       >
         {status === "sending" ? "Sending…" : "Send Message"}
       </button>

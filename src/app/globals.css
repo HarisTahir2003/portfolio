@@ -98,6 +98,14 @@ body {
   color: transparent;
 }
 
+/* Metallic white→silver text (hero name) */
+.text-metallic {
+  background: linear-gradient(180deg, #ffffff 0%, #c7ced8 55%, #aab3c2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 /* Section eyebrow label */
 .eyebrow {
   font-family: var(--font-sans), system-ui, sans-serif;

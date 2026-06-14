@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ThreeScene from "@/components/ThreeScene";
+import CursorGlow from "@/components/CursorGlow";
 import { profile } from "@/data/portfolio";
 
 // Clean, technical body font
@@ -48,6 +49,9 @@ export default function RootLayout({
         <div className="fixed inset-0 z-0 pointer-events-none">
           <ThreeScene />
         </div>
+
+        {/* Site-wide cursor glow (above bg, below content, never blocks clicks) */}
+        <CursorGlow />
 
         {/* Content sits above the background */}
         <div className="relative z-10 flex flex-col flex-grow">

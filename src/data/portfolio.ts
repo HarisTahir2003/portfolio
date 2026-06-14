@@ -79,7 +79,7 @@ export type Project = {
   details: ProjectDetails;
   tags: string[];
   githubUrl: string;
-  /** paths relative to /public, e.g. "/healthsync-1.png" */
+  /** paths relative to /public, e.g. "/healthsync-1.webp" */
   images: string[];
   pdfs: { name: string; url: string }[];
 };
@@ -129,9 +129,9 @@ export const profile: Profile = {
   education: "B.S. Computer Science — LUMS",
   email: "haristahirrana@gmail.com",
   resumeUrl: "/Haris_Resume.pdf",
-  photo: "/img.jpg",
+  photo: "/img.webp",
   // Transparent cut-out PNG for the ProfileCard. Falls back to `photo` until added.
-  avatar: "/avatar.png",
+  avatar: "/avatar.webp",
   shortBio:
     "Computer Science graduate specializing in Machine Learning, Deep Learning, and Data Science.",
   longBio: [
@@ -306,19 +306,19 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/HarisTahir2003/SE-Project-Group-9",
     images: [
-      "/healthsync-1.png",
-      "/healthsync-2.png",
-      "/healthsync-3.png",
-      "/healthsync-4.png",
-      "/healthsync-5.png",
-      "/healthsync-6.png",
+      "/healthsync-1.webp",
+      "/healthsync-2.webp",
+      "/healthsync-3.webp",
+      "/healthsync-4.webp",
+      "/healthsync-5.webp",
+      "/healthsync-6.webp",
     ],
     pdfs: [{ name: "Project Report", url: "/HealthSync_Report.pdf" }],
   },
 
   {
     category: "DL/GenAI",
-    title: "Multi-Stage Financial Intelligence System",
+    title: "Financial Intelligence System",
     description:
       "Agentic system for automated extraction, summarization, and cross-document analysis of SEC 10-K filings.",
     details: {
@@ -357,13 +357,13 @@ export const projects: Project[] = [
     ],
     githubUrl:
       "https://github.com/HarisTahir2003/NLP_Applications_for_Financial_Reports",
-    images: ["/Fin-1.png", "/Fin-2.png", "/Fin-3.png"],
+    images: ["/Fin-1.webp", "/Fin-2.webp", "/Fin-3.webp"],
     pdfs: [{ name: "Project Report", url: "/Finance_Project_Report.pdf" }],
   },
 
   {
     category: "AI/ML",
-    title: "Urdu Text Classification using Machine Learning",
+    title: "Urdu Text Classification",
     description:
       "End-to-end NLP pipeline for classifying Urdu news articles across multiple categories.",
     details: {
@@ -445,14 +445,14 @@ export const projects: Project[] = [
       "Data Visualization",
     ],
     githubUrl: "https://github.com/HarisTahir2003/AI_Project",
-    images: ["/AIProj-1.png", "/AIProj-2.png"],
+    images: ["/AIProj-1.webp", "/AIProj-2.webp"],
     pdfs: [],
   },
 
   {
     category: "AI/ML",
     title:
-      "Data-Driven Study of Socioeconomic Inequality & Career Aspirations",
+      "Study of Socioeconomic Inequality & Career Aspirations",
     description:
       "Statistical analysis of how socioeconomic inequality shapes academic major selection and career aspirations among university students.",
     details: {
@@ -486,14 +486,14 @@ export const projects: Project[] = [
       "Statistical Modeling",
     ],
     githubUrl: "https://github.com/HarisTahir2003/Data-Science-Project",
-    images: ["/Data-1.png", "/Data-2.png", "/Data-3.png"],
+    images: ["/Data-1.webp", "/Data-2.webp", "/Data-3.webp"],
     pdfs: [{ name: "Project Report", url: "/DataScience_Project.pdf" }],
   },
 
   {
     category: "Software Engineering",
     title:
-      "Real-Time Multiplayer Ludo Game",
+      "Ludo Game",
     description:
       "A full-stack multiplayer Ludo game featuring server-authoritative architecture, real-time WebSockets, dynamic matchmaking, and AI fault tolerance.",
     details: {
@@ -526,14 +526,14 @@ export const projects: Project[] = [
       "MERN Stack",
     ],
     githubUrl: "https://github.com/HarisTahir2003/ludo-game",
-    images: ["/ludo1.png", "/ludo2.png", "/ludo3.png", "/ludo4.png", "/ludo5.png", "/ludo6.png"],
+    images: ["/ludo1.webp", "/ludo2.webp", "/ludo3.webp", "/ludo4.webp", "/ludo5.webp", "/ludo6.webp"],
     pdfs: [],
   },
 
   {
     category: "DL/GenAI",
     title:
-      "Knowledge Graph Retrieval Systems: Biologically-Inspired HippoRAG Reproduction",
+      "Biologically-Inspired HippoRAG Reproduction",
     description:
       "HippoRAG retrieval framework mapping human memory indexing theory onto LLMs and Knowledge Graphs for multi-hop question answering.",
     details: {
@@ -612,7 +612,7 @@ export const projects: Project[] = [
       "Vercel",
     ],
     githubUrl: "https://github.com/HarisTahir2003/ludo-game",
-    images: ["/IMS1.png", "/IMS2.png", "/IMS3.png"],
+    images: ["/IMS1.webp", "/IMS2.webp", "/IMS3.webp"],
     pdfs: [],
   },
 
@@ -700,27 +700,27 @@ export const certificates: Certificate[] = [
   {
     title: "Data Analytics Essentials",
     issuer: "Cisco",
-    image: "/certificate1.jpg",
+    image: "/certificate1.webp",
   },
   {
     title: "Introduction to Cybersecurity",
     issuer: "Cisco",
-    image: "/certificate2.jpg",
+    image: "/certificate2.webp",
   },
   {
     title: "Introduction to Data Science",
     issuer: "Cisco",
-    image: "/certificate3.jpg",
+    image: "/certificate3.webp",
   },
   {
     title: "Claude Code 101",
     issuer: "Anthropic",
-    image: "/certificate4.jpg",
+    image: "/certificate4.webp",
   },
   {
     title: "Claude Code in Action",
     issuer: "Anthropic",
-    image: "/certificate5.jpg",
+    image: "/certificate5.webp",
   },
 
   // TODO: add more certificates here ↓

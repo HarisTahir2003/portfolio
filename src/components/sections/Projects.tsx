@@ -63,7 +63,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="px-6 py-24 md:py-32">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <SectionHeading
             eyebrow="03 — Projects"
@@ -93,7 +93,7 @@ export default function Projects() {
         {/* Grid */}
         <motion.div
           layout
-          className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3"
+          className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4"
         >
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => (
