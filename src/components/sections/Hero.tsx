@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Icon from "@/components/Icon";
 import { profile } from "@/data/portfolio";
 
@@ -155,27 +155,6 @@ export default function Hero() {
           </div>
         </motion.div>
       </div>
-
-      {/* Scroll cue */}
-      <motion.a
-        href="/#about"
-        aria-label="Scroll to about"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.8 }}
-        className="absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-ink-faint"
-      >
-        <span className="text-[10px] font-semibold uppercase tracking-[0.3em]">
-          Scroll
-        </span>
-        <motion.span
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-          className="block"
-        >
-          <ArrowDown size={20} />
-        </motion.span>
-      </motion.a>
     </section>
   );
 }

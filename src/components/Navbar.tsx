@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { User, Briefcase, FolderGit2, Cpu, FileText, Mail } from "lucide-react";
+import { User, Briefcase, FolderGit2, Cpu, Mail } from "lucide-react";
 import { NavBar, type NavItem } from "@/components/ui/tubelight-navbar";
 
 // Section links + Resume route + a standout Contact CTA.
@@ -11,7 +11,6 @@ const navItems: NavItem[] = [
   { name: "Experience", url: "/#experience", icon: Briefcase },
   { name: "Projects", url: "/#projects", icon: FolderGit2 },
   { name: "Skills", url: "/#skills", icon: Cpu },
-  { name: "Resume", url: "/resume", icon: FileText },
   { name: "Contact", url: "/#contact", icon: Mail, cta: true },
 ];
 

@@ -794,5 +794,4 @@ export const sectionLinks: NavLink[] = [
 /** Standalone routes */
 export const routeLinks: NavLink[] = [
   { name: "Blog", href: "/blog" },
-  { name: "Resume", href: "/resume" },
 ];
