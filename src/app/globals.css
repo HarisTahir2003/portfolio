@@ -106,6 +106,90 @@ body {
   color: transparent;
 }
 
+/* ==========================================================================
+   HERO TEXT ANIMATION  —  per-letter metallic name + shine sweep + typewriter
+   ========================================================================== */
+
+/* Per-letter metallic: clip the gradient on EACH letter span (the vertical
+   180deg gradient makes per-letter clipping seamless). Opaque silver fallback
+   so a failed clip degrades to silver, never invisible. */
+.name-metallic .name-letter {
+  background: linear-gradient(180deg, #ffffff 0%, #c7ced8 55%, #aab3c2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #c7ced8;
+}
+
+/* Single-pass shine sweep across the assembled name */
+.name-metallic {
+  position: relative;
+}
+.name-metallic::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(
+    100deg,
+    transparent 42%,
+    rgba(255, 255, 255, 0.65) 50%,
+    transparent 58%
+  );
+  background-size: 250% 100%;
+  background-position: -150% 0;
+  -webkit-mask: linear-gradient(#000 0 0) text;
+  mask: linear-gradient(#000 0 0) text;
+}
+.name-metallic.is-shining::after {
+  animation: name-shine-sweep 1.1s ease-out 1 forwards;
+}
+@keyframes name-shine-sweep {
+  0% {
+    opacity: 0;
+    background-position: -150% 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    background-position: 250% 0;
+  }
+}
+
+/* Typewriter caret blink (the title types char-by-char via JS) */
+.animate-caret-blink {
+  animation: caret-blink 0.9s steps(1) infinite;
+}
+@keyframes caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Reduced-motion safety net (scoped — the global block only zeroes durations,
+   which can't stop the blinking caret or reset framer transforms). */
+@media (prefers-reduced-motion: reduce) {
+  .animate-caret-blink {
+    display: none !important;
+  }
+  .name-metallic::after {
+    display: none !important;
+  }
+  .name-letter {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+  }
+}
+
 /* Section eyebrow label */
 .eyebrow {
   font-family: var(--font-sans), system-ui, sans-serif;
