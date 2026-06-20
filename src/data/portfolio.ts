@@ -266,6 +266,48 @@ export const projectCategories: ("All" | ProjectCategory)[] = [
 export const projects: Project[] = [
   {
     category: "Software Engineering",
+    title:
+      "Power Zone: Inventory Management System",
+    description:
+      "An end-to-end, production-ready Inventory Management System for a prominent diesel generator manufacturing company, Power Zone.",
+    details: {
+      overview:
+        "Collaborated in a three-person team to deliver an end-to-end Inventory Management System for Power Zone, a prominent diesel generator manufacturer in Pakistan.",
+      contributions: [
+        {
+          title: "Full Stack Delivery",
+          content:
+            "Designed and shipped the complete operational flow covering shipments, factory receiving, engine and alternator coupling, order creation, fulfillment, and stock adjustments.",
+        },
+        {
+          title: "Concurrency Safe Engine",
+          content:
+            "Engineered a derived stock model on atomic PostgreSQL functions. This utilizes row and advisory level locking with post write balance guards to guarantee accurate stock under simultaneous edits.",
+        },
+        {
+          title: "Access Control and Security",
+          content:
+            "Built role-based access control across seven distinct modules with an administrative tier. Hardened the platform using PostgreSQL Row Level Security, server-side authentication guards, and session revocation.",
+        },
+        {
+          title: "Analytics and Reporting",
+          content:
+            "Developed a real-time dashboard featuring inventory matrices by rating and one-click data exports to CSV and Excel.",
+        },
+      ],
+    },
+    tags: [
+      "Next.js",
+      "React",
+      "PostgreSQL",
+      "Vercel",
+    ],
+    githubUrl: "https://github.com/HarisTahir2003/ludo-game",
+    images: ["/IMS1.webp", "/IMS2.webp", "/IMS3.webp"],
+    pdfs: [],
+  },
+  {
+    category: "Software Engineering",
     title: "HealthSync — Mobile Healthcare Platform",
     description:
       "Mobile app simplifying hospital appointments by connecting patients directly with verified doctors.",
@@ -315,7 +357,45 @@ export const projects: Project[] = [
     ],
     pdfs: [{ name: "Project Report", url: "/HealthSync_Report.pdf" }],
   },
-
+  {
+    category: "Software Engineering",
+    title:
+      "Ludo Game",
+    description:
+      "A full-stack multiplayer Ludo game featuring server-authoritative architecture, real-time WebSockets, dynamic matchmaking, and AI fault tolerance.",
+    details: {
+      overview:
+        "Engineered a full-stack, server-authoritative multiplayer Ludo game featuring real-time WebSocket communication, dynamic matchmaking, and automated AI fault tolerance.",
+      contributions: [
+        {
+          title: "Event-Driven Architecture",
+          content:
+            "Implemented a bi-directional, real-time communication layer using Socket.IO to handle synchronized gameplay events, including dice rolls, token movements, in-game room chats, and live activity logs.",
+        },
+        {
+          title: "Server-Authoritative Logic",
+          content:
+            "Developed a complete Ludo rules engine in TypeScript to compute valid moves, safe-zone captures, turn timers, and victory standings entirely on the backend to eliminate client-side manipulation.",
+        },
+        {
+          title: "Matchmaking & Resiliency",
+          content:
+            "Built a dynamic room management system supporting live lobby broadcasting, automatic player color allocation, session restoration, and a 10-second AI takeover fallback to maintain gameplay continuity if a user disconnects.",
+        },
+      ],
+    },
+    tags: [
+      "React",
+      "Typescript",
+      "MongoDB",
+      "Node.js",
+      "REST APIs",
+      "MERN Stack",
+    ],
+    githubUrl: "https://github.com/HarisTahir2003/ludo-game",
+    images: ["/ludo1.webp", "/ludo2.webp", "/ludo3.webp", "/ludo4.webp", "/ludo5.webp", "/ludo6.webp"],
+    pdfs: [],
+  },
   {
     category: "DL/GenAI",
     title: "Financial Intelligence System",
@@ -360,7 +440,48 @@ export const projects: Project[] = [
     images: ["/Fin-1.webp", "/Fin-2.webp", "/Fin-3.webp"],
     pdfs: [{ name: "Project Report", url: "/Finance_Project_Report.pdf" }],
   },
-
+  {
+    category: "DL/GenAI",
+    title:
+      "Biologically-Inspired HippoRAG Reproduction",
+    description:
+      "HippoRAG retrieval framework mapping human memory indexing theory onto LLMs and Knowledge Graphs for multi-hop question answering.",
+    details: {
+      overview:
+        "Reengineered and evaluated HippoRAG, a retrieval framework mapping human memory indexing theory onto LLMs and Knowledge Graphs for multi-hop question answering.",
+      contributions: [
+        {
+          title: "Exploratory Data Analysis",
+          content:
+            "Developed a data pipeline to normalize multi-schema datasets, validating passage lengths, hop-count distributions, and corpus filtration characteristics.",
+        },
+        {
+          title: "Modular System Architecture",
+          content:
+            "Engineered a clean-room Python package using igraph for accelerated PageRank routing, abstract LLM layers, and a hybrid dense-graph scoring engine.",
+        },
+        {
+          title: "Resource Optimization",
+          content:
+            "Executed the pipeline using 4-bit quantized open-weight models on cloud GPUs, implementing state checkpointing and soft time guards across 40 compute hours.",
+        },
+        {
+          title: "Resource Optimization",
+          content:
+            "Benchmarked multi-hop recall metrics and analyzed open-weight LLM failure modes, compiling the insights into a formal NeurIPS style technical report.",
+        },
+      ],
+    },
+    tags: [
+      "GraphRAG",
+      "Knowledge Graphs",
+      "Data Engineering",
+      "Data Analysis",
+    ],
+    githubUrl: "https://github.com/HarisTahir2003/ludo-game",
+    images: [],
+    pdfs: [{ name: "Project Report", url: "/Final Report HippoRAG.pdf" }],
+  },
   {
     category: "AI/ML",
     title: "Urdu Text Classification",
@@ -404,7 +525,6 @@ export const projects: Project[] = [
     images: [],
     pdfs: [{ name: "Project Report", url: "/ML_Project_Report.pdf" }],
   },
-
   {
     category: "AI/ML",
     title: "Micro-Robot Motion Trajectory Prediction",
@@ -448,7 +568,6 @@ export const projects: Project[] = [
     images: ["/AIProj-1.webp", "/AIProj-2.webp"],
     pdfs: [],
   },
-
   {
     category: "AI/ML",
     title:
@@ -490,131 +609,12 @@ export const projects: Project[] = [
     pdfs: [{ name: "Project Report", url: "/DataScience_Project.pdf" }],
   },
 
-  {
-    category: "Software Engineering",
-    title:
-      "Ludo Game",
-    description:
-      "A full-stack multiplayer Ludo game featuring server-authoritative architecture, real-time WebSockets, dynamic matchmaking, and AI fault tolerance.",
-    details: {
-      overview:
-        "Engineered a full-stack, server-authoritative multiplayer Ludo game featuring real-time WebSocket communication, dynamic matchmaking, and automated AI fault tolerance.",
-      contributions: [
-        {
-          title: "Event-Driven Architecture",
-          content:
-            "Implemented a bi-directional, real-time communication layer using Socket.IO to handle synchronized gameplay events, including dice rolls, token movements, in-game room chats, and live activity logs.",
-        },
-        {
-          title: "Server-Authoritative Logic",
-          content:
-            "Developed a complete Ludo rules engine in TypeScript to compute valid moves, safe-zone captures, turn timers, and victory standings entirely on the backend to eliminate client-side manipulation.",
-        },
-        {
-          title: "Matchmaking & Resiliency",
-          content:
-            "Built a dynamic room management system supporting live lobby broadcasting, automatic player color allocation, session restoration, and a 10-second AI takeover fallback to maintain gameplay continuity if a user disconnects.",
-        },
-      ],
-    },
-    tags: [
-      "React",
-      "Typescript",
-      "MongoDB",
-      "Node.js",
-      "REST APIs",
-      "MERN Stack",
-    ],
-    githubUrl: "https://github.com/HarisTahir2003/ludo-game",
-    images: ["/ludo1.webp", "/ludo2.webp", "/ludo3.webp", "/ludo4.webp", "/ludo5.webp", "/ludo6.webp"],
-    pdfs: [],
-  },
 
-  {
-    category: "DL/GenAI",
-    title:
-      "Biologically-Inspired HippoRAG Reproduction",
-    description:
-      "HippoRAG retrieval framework mapping human memory indexing theory onto LLMs and Knowledge Graphs for multi-hop question answering.",
-    details: {
-      overview:
-        "Reengineered and evaluated HippoRAG, a retrieval framework mapping human memory indexing theory onto LLMs and Knowledge Graphs for multi-hop question answering.",
-      contributions: [
-        {
-          title: "Exploratory Data Analysis",
-          content:
-            "Developed a data pipeline to normalize multi-schema datasets, validating passage lengths, hop-count distributions, and corpus filtration characteristics.",
-        },
-        {
-          title: "Modular System Architecture",
-          content:
-            "Engineered a clean-room Python package using igraph for accelerated PageRank routing, abstract LLM layers, and a hybrid dense-graph scoring engine.",
-        },
-        {
-          title: "Resource Optimization",
-          content:
-            "Executed the pipeline using 4-bit quantized open-weight models on cloud GPUs, implementing state checkpointing and soft time guards across 40 compute hours.",
-        },
-        {
-          title: "Resource Optimization",
-          content:
-            "Benchmarked multi-hop recall metrics and analyzed open-weight LLM failure modes, compiling the insights into a formal NeurIPS style technical report.",
-        },
-      ],
-    },
-    tags: [
-      "GraphRAG",
-      "Knowledge Graphs",
-      "Data Engineering",
-      "Data Analysis",
-    ],
-    githubUrl: "https://github.com/HarisTahir2003/ludo-game",
-    images: [],
-    pdfs: [{ name: "Project Report", url: "/Final Report HippoRAG.pdf" }],
-  },
 
-  {
-    category: "Software Engineering",
-    title:
-      "Power Zone: Inventory Management System",
-    description:
-      "An end-to-end, production-ready Inventory Management System for a prominent diesel generator manufacturing company, Power Zone.",
-    details: {
-      overview:
-        "Collaborated in a three-person team to deliver an end-to-end Inventory Management System for Power Zone, a prominent diesel generator manufacturer in Pakistan.",
-      contributions: [
-        {
-          title: "Full Stack Delivery",
-          content:
-            "Designed and shipped the complete operational flow covering shipments, factory receiving, engine and alternator coupling, order creation, fulfillment, and stock adjustments.",
-        },
-        {
-          title: "Concurrency Safe Engine",
-          content:
-            "Engineered a derived stock model on atomic PostgreSQL functions. This utilizes row and advisory level locking with post write balance guards to guarantee accurate stock under simultaneous edits.",
-        },
-        {
-          title: "Access Control and Security",
-          content:
-            "Built role-based access control across seven distinct modules with an administrative tier. Hardened the platform using PostgreSQL Row Level Security, server-side authentication guards, and session revocation.",
-        },
-        {
-          title: "Analytics and Reporting",
-          content:
-            "Developed a real-time dashboard featuring inventory matrices by rating and one-click data exports to CSV and Excel.",
-        },
-      ],
-    },
-    tags: [
-      "Next.js",
-      "React",
-      "PostgreSQL",
-      "Vercel",
-    ],
-    githubUrl: "https://github.com/HarisTahir2003/ludo-game",
-    images: ["/IMS1.webp", "/IMS2.webp", "/IMS3.webp"],
-    pdfs: [],
-  },
+
+
+
+
 
   // TODO: add more projects here ↓ (copy the shape above)
   // {

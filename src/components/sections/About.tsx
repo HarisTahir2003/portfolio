@@ -70,7 +70,7 @@ export default function About() {
                 <button
                   type="button"
                   onClick={() => setCvOpen(true)}
-                  className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-bg-card px-5 py-3 font-semibold text-ink transition-all hover:border-accent hover:text-accent"
+                  className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-5 py-3.5 font-semibold text-white shadow-lg shadow-accent/20 transition-all hover:bg-accent-bright active:scale-[0.99]"
                 >
                   <FileText size={18} />
                   View CV

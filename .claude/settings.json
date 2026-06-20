@@ -18,7 +18,8 @@
       "Bash(echo \"dev pid $!\")",
       "Bash(curl -s -o /dev/null -w \"home HTTP %{http_code}\\\\n\" http://localhost:3000/)",
       "Bash(xargs kill -9)",
-      "Bash(node -e \"try{require.resolve\\('clsx'\\);console.log\\('clsx: yes'\\)}catch{console.log\\('clsx: NO'\\)} try{require.resolve\\('tailwind-merge'\\);console.log\\('tailwind-merge: yes'\\)}catch{console.log\\('tailwind-merge: NO'\\)}\")"
+      "Bash(node -e \"try{require.resolve\\('clsx'\\);console.log\\('clsx: yes'\\)}catch{console.log\\('clsx: NO'\\)} try{require.resolve\\('tailwind-merge'\\);console.log\\('tailwind-merge: yes'\\)}catch{console.log\\('tailwind-merge: NO'\\)}\")",
+      "Bash(node -e ' *)"
     ],
     "additionalDirectories": [
       "/private/tmp/portfolio_clone"
