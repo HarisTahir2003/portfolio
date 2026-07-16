@@ -52,6 +52,8 @@ export type Experience = {
   company: string;
   duration: string;
   location: string;
+  /** intro paragraph shown above the bullets (LinkedIn's "Description") */
+  summary?: string;
   description: string[];
   /** true for the most relevant / current role — gets the accent dot */
   featured?: boolean;
@@ -164,26 +166,31 @@ export const profile: Profile = {
 
 export const experiences: Experience[] = [
   {
-    role: "Co-Founder",
+    role: "Co-Founder & Chief Operating Officer",
     company: "Arthus Systems",
     duration: "Feb 2026 – Present",
     location: "Hybrid / Lahore, Pakistan",
     featured: true,
+    summary:
+      "We launched Arthus Systems to build software and automation that actually work, without any unnecessary overhead. As a technical co-founder, my daily focus is straightforward: I design the system logic and write the core code alongside our small team to ensure everything we ship is fast, secure, and actually useful. Our studio splits its focus between three main areas:",
     description: [
-      "Co-founded Arthus Systems, a software studio that designs and ships custom software applications and AI-driven products for industrial and enterprise clients, alongside in-house SaaS products.",
-      "Own end-to-end delivery: client discovery, system architecture, full-stack development, database design, application security, and deployment.",
-      "Drive the company's technical direction and client engagements.",
+      "Custom Software Engineering: Designing and creating reliable web apps, database architectures, and internal dashboards to help businesses manage their workflows and operations cleanly.",
+      "Practical Automation: Building AI pipelines that take over repetitive manual tasks to save teams hours of manual entry.",
+      "In-House SaaS Products: Developing and launching our own software platforms to solve common business bottlenecks and make specialized tools accessible to everyone.",
+      "Every project we take on gets our full focus. We don't use middle managers or sales reps, meaning our clients work directly with the engineers building their products from day one.",
     ],
   },
   {
-    role: "Machine Learning Researcher",
+    role: "Machine Learning Engineer",
     company: "clapp trust",
     duration: "Feb 2026 – May 2026",
     location: "Remote / Lahore, Pakistan",
+    summary:
+      "Worked with a colleague and collaborated with Clapp Hospital to develop an automated speech diagnosis system designed to classify hypernasal and normal speech patterns.",
     description: [
-      "Data Engineering: Collaborated with Clapp Hospital to build an automated speech-diagnosis system, processing and structuring a dataset of 500 speech samples with speaker diarization and K-Nearest Neighbors to segment and isolate relevant speech characteristics.",
-      "Model Development: Built and evaluated dual machine learning pipelines, training both a Convolutional Neural Network and an XGBoost classifier to distinguish hypernasal from normal speech.",
-      "Optimization & Selection: Deployed XGBoost as the final production solution over the deep-learning approach for its lightweight profile, low inference latency, and novelty in this domain.",
+      "Data Engineering: Processed and structured a dataset of 500 speech samples, applying speaker diarization and K-Nearest Neighbors algorithms to cleanly segment and isolate relevant speech characteristics.",
+      "Model Development: Built and evaluated dual machine learning pipelines, training both a Convolutional Neural Network architecture and an XGBoost classifier to differentiate between normal and hypernasal audio inputs.",
+      "Optimization and Selection: Deployed the XGBoost model as the final production solution, selecting it over the deep learning framework due to its lightweight profile, low inference latency, and novelty in this domain.",
     ],
   },
   {
@@ -191,54 +198,64 @@ export const experiences: Experience[] = [
     company: "Lahore University of Management Sciences",
     duration: "Jan 2026 – May 2026",
     location: "On-Site / Lahore, Pakistan",
+    summary:
+      "Served as the Teaching Assistant for the \"Introduction to Arabic Language\" course. Managed core administrative operations and supported student learning throughout the course.",
     description: [
-      "Served as Teaching Assistant for \"Introduction to Arabic Language,\" holding dedicated office hours to provide academic assistance, clarify concepts, and help students improve their performance.",
-      "Managed course administration and evaluation: tracked daily participation and attendance, and marked regular assignments with constructive feedback on foundational vocabulary and grammar.",
-      "Coordinated exam logistics and invigilated midterms and finals to maintain academic integrity and a smooth testing environment.",
+      "Student Support: Held dedicated office hours to provide direct academic assistance, clarify course concepts, and help students improve their performance.",
+      "Course Administration & Exam Logistics: Managed daily attendance and participation tracking for the student cohort while coordinating midterms and finals, including invigilation and logistics",
+      "Academic Evaluation: Assessed and marked regular assignments, providing constructive feedback to assist students with foundational vocabulary and grammar concepts.",
     ],
   },
   {
-    role: "Computer Vision & Medical Imaging Researcher",
-    company: "Computer Vision and Graphics Lab, LUMS",
+    role: "Deep Learning and Medical Imaging Researcher",
+    company: "Computer Vision & Graphics Lab",
     duration: "Feb 2025 – Jun 2025",
     location: "Hybrid / Lahore, Pakistan",
+    summary:
+      "Led a two-person research team to develop an automated pipeline for Tuberculosis (TB) detection from chest X-rays. The project focused on improving diagnostic accuracy and interpretability by combining state-of-the-art CNN-based segmentation with hybrid classification architectures.",
     description: [
-      "Designed and implemented an end-to-end deep learning pipeline for automated TB detection, integrating UNet++ segmentation with SEResNet50 and Swin Transformer–based classification models.",
-      "Curated, preprocessed, and trained models on 10,000+ chest X-ray images from multiple public datasets, achieving 99% classification accuracy and a 96% Dice score for segmentation.",
-      "Evaluated and interpreted model performance using IoU, F1-score, and GradCAM++ visualizations, and co-authored a research paper documenting methodology and results.",
+      "Data Engineering: Curated and preprocessed a robust dataset of 10,000+ chest X-ray images from multiple public repositories to ensure model generalizability across diverse patient demographics.",
+      "Architectural Design: Engineered a dual-phase pipeline utilizing UNet++ for precise lung segmentation and SEResNet50/Swin Transformers for classification, achieving a peak accuracy of 99% and a 96% Dice coefficient.",
+      "Explainable AI (XAI): Integrated GradCAM++ visualizations to provide heatmaps of infected regions, enhancing model interpretability and clinical trust for medical practitioners.",
+      "Academic Documentation: Authored a comprehensive research paper detailing the methodology and evaluation metrics, including IoU, F1-score, and sensitivity.",
     ],
   },
   {
-    role: "Full-Stack Web Development Intern",
+    role: "Full Stack Web Development Intern",
     company: "Rozee",
     duration: "Jul 2024 – Aug 2024",
     location: "On-Site / Lahore, Pakistan",
+    summary:
+      "Focused on enhancing platform accessibility by developing AI-driven, automated CV-building solutions. My work centered on creating inclusive tools for users with varying literacy levels utilizing voice-processing technologies.",
     description: [
-      "Built a voice-enabled WhatsApp bot using Node.js and JavaScript that guided users through CV creation by asking questions via voice and processing multilingual voice responses.",
-      "Used OpenAI and Azure Speech APIs for real-time voice-to-text and language translation, enabling inclusive access for users with limited literacy.",
-      "Developed a separate chatbot-based CV builder using simple text messaging, integrated with Rozee.pk's platform via Laravel (PHP), to make resume creation intuitive and accessible.",
+      "Inclusive Product Development: Engineered a voice-enabled WhatsApp bot using Node.js and JavaScript that guides users through CV creation by asking questions via voice and processing multilingual responses.",
+      "AI Implementation: Integrated OpenAI and Azure Speech APIs to provide real-time voice-to-text and language translation, directly enabling job market access for users with limited literacy.",
+      "Full-Stack Integration: Developed a text-based chatbot CV builder using Laravel (PHP) to streamline the resume creation process for the general user base.",
     ],
   },
   {
     role: "Research Analyst — Public Policy & Finance",
-    company: "FINTRA, LUMS",
+    company: "FINTRA (LUMS Finance Society)",
     duration: "Sep 2023 – Jun 2024",
     location: "Hybrid / Lahore, Pakistan",
+    summary:
+      "Conducted deep-dive economic research and policy analysis focused on national social welfare initiatives. My work involved evaluating the intersection of financial technology and government-mandated programs to drive economic inclusion and data-driven governance.",
     description: [
-      "Authored a research article analyzing Pakistan's Ehsaas social welfare program, evaluating its economic impact, financial inclusion mechanisms, and effectiveness in poverty alleviation.",
-      "Conducted comparative policy analysis by benchmarking Ehsaas against global social protection programs (e.g., Brazil's Bolsa Família), highlighting strengths, limitations, and scalability challenges.",
-      "Assessed the role of digital payments, biometric verification, and cashless systems in reducing leakages and improving transparency, presenting data-driven insights for policy improvement.",
+      "Policy Analysis: Authored a featured research article in Bottomline magazine analyzing Pakistan's Ehsaas program, evaluating its macro-economic impact, financial inclusion mechanisms, and overall effectiveness in poverty alleviation.",
+      "Comparative Benchmarking: Performed a comparative policy assessment by benchmarking local initiatives against global social protection models, such as Brazil's Bolsa Família, to identify scalability challenges and structural limitations.",
+      "FinTech Evaluation: Assessed the efficacy of biometric verification and digital payment systems in reducing fiscal leakages, presenting data-driven insights on how cashless systems improve transparency in public spending.",
     ],
   },
   {
     role: "Sustainability Research Intern",
-    company: "World Wildlife Fund (WWF)",
+    company: "WWF - Pakistan",
     duration: "Jul 2021 – Aug 2021",
     location: "Remote / Lahore, Pakistan",
+    summary:
+      "Participated in a remote program focused on addressing Pakistan's environmental crises through innovative business modeling. The program emphasized the translation of global sustainability standards into practical, localized solutions for resource management and reforestation.",
     description: [
-      "Completed a digital eco-internship focused on global environmental challenges and their practical implications within Pakistan's socio-economic context.",
-      "Researched and analyzed sustainability issues such as deforestation and low forest cover, incorporating global best practices into local solutions.",
-      "Authored and presented a sustainable business proposal promoting fast-growing, resource-efficient seeds to improve forest regeneration and environmental impact.",
+      "Environmental Gap Analysis: Researched and analyzed Pakistan's low forest cover and deforestation rates, identifying the socio-economic drivers behind environmental degradation to inform strategic planning.",
+      "Sustainable Business Innovation: Authored and presented a comprehensive business model proposal focused on the distribution of fast-growing, resource-efficient seeds to accelerate nationwide forest regeneration.",
     ],
   },
 

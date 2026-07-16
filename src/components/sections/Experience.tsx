@@ -9,7 +9,7 @@ import { experiences, type Experience as ExperienceType } from "@/data/portfolio
 
 function ExperienceItem({ exp }: { exp: ExperienceType }) {
   const [open, setOpen] = useState(false);
-  const hasBullets = exp.description.length > 0;
+  const hasBullets = exp.description.length > 0 || Boolean(exp.summary);
 
   return (
     <div className="relative">
@@ -80,17 +80,27 @@ function ExperienceItem({ exp }: { exp: ExperienceType }) {
               transition={{ duration: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
               className="overflow-hidden"
             >
-              <ul className="mt-4 space-y-2.5">
-                {exp.description.map((bullet, i) => (
-                  <li
-                    key={i}
-                    className="flex gap-3 leading-relaxed text-ink-muted"
-                  >
-                    <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-accent" />
-                    {bullet}
-                  </li>
-                ))}
-              </ul>
+              {/* Lead paragraph (LinkedIn "Description") — no bullet, brighter
+                  than the list below so it reads as an intro. */}
+              {exp.summary && (
+                <p className="mt-4 border-l-2 border-border pl-4 leading-relaxed text-ink">
+                  {exp.summary}
+                </p>
+              )}
+
+              {exp.description.length > 0 && (
+                <ul className="mt-4 space-y-2.5">
+                  {exp.description.map((bullet, i) => (
+                    <li
+                      key={i}
+                      className="flex gap-3 leading-relaxed text-ink-muted"
+                    >
+                      <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-accent" />
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </motion.div>
           )}
         </AnimatePresence>
