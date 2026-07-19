@@ -283,18 +283,60 @@ export const projectCategories: ("All" | ProjectCategory)[] = [
 export const projects: Project[] = [
   {
     category: "Software Engineering",
-    title:
-      "Power Zone: Inventory Management System",
+    title: "Company Management System",
     description:
-      "An end-to-end, production-ready Inventory Management System for a prominent diesel generator manufacturing company, Power Zone.",
+      "An end-to-end CRM and business operations platform with automated lead capture.",
     details: {
       overview:
-        "Collaborated in a three-person team to deliver an end-to-end Inventory Management System for Power Zone, a prominent diesel generator manufacturer in Pakistan.",
+        "Designed and engineered a modular, end-to-end CRM and business operations platform for Arthus Systems, integrated with a custom web scraping extension to automate lead capture, cold outreach, double-entry accounting, and project management.",
+      contributions: [
+        {
+          title: "Browser-to-CRM Lead Ingestion",
+          content:
+            "Developed a Manifest V3 Chrome extension utilizing network response interception and DOM scraping to capture leads directly from lead generation tools and instantly sync them into a centralized CRM with dynamic audience segmentation.",
+        },
+        {
+          title: "Automated Outreach & Email",
+          content:
+            "Built a two-way email system (IMAP/SMTP) using Claude AI to personalize cold outreach messages, featuring throttled sending queues and scheduling to prevent damage to the domain.",
+        },
+        {
+          title: "Automated Double-Entry Accounting",
+          content:
+            "Built a financial module featuring automated ledger postings and Claude Vision-powered receipt parsing to instantly generate core statements like trial balances, income statements, and balance sheets, as well as track expenses and revenue.",
+        },
+        {
+          title: "Project Hub",
+          content:
+            "Built a project management module to track B2B, B2C, and client milestones, integrating an AES-256-GCM encrypted credentials vault, per-project P&L tracking, and an automated handover-export system.",
+        },
+      ],
+    },
+    tags: [
+      "React",
+      "Supabase",
+      "PostgreSQL",
+      "Next.js",
+      "CRM",
+      "Claude AI"
+    ],
+    githubUrl: "",
+    images: ["/CMS1.webp", "/CMS2.webp", "/CMS3.webp", "/CMS4.webp"],
+    pdfs: [],
+  },
+  {
+    category: "Software Engineering",
+    title: "Power Zone Inventory Management System",
+    description:
+      "A production-ready Inventory Management System for enterprise diesel generator manufacturing.",
+    details: {
+      overview:
+        "Delivered an end-to-end, production-ready Inventory Management System for a prominent enterprise-level diesel generator manufacturer, Power Zone.",
       contributions: [
         {
           title: "Full Stack Delivery",
           content:
-            "Designed and shipped the complete operational flow covering shipments, factory receiving, engine and alternator coupling, order creation, fulfillment, and stock adjustments.",
+            "Designed and shipped the complete operational flow covering shipments, factory receiving, engine and alternator coupling, order creation and fulfillment, and stock adjustments.",
         },
         {
           title: "Concurrency Safe Engine",
@@ -313,156 +355,16 @@ export const projects: Project[] = [
         },
       ],
     },
-    tags: [
-      "Next.js",
-      "React",
-      "PostgreSQL",
-      "Vercel",
-    ],
-    githubUrl: "https://github.com/HarisTahir2003/ludo-game",
+    tags: ["Next.js", "React", "PostgreSQL", "Vercel", "Supabase"],
+    githubUrl: "",
     images: ["/IMS1.webp", "/IMS2.webp", "/IMS3.webp"],
     pdfs: [],
   },
   {
-    category: "Software Engineering",
-    title: "HealthSync — Mobile Healthcare Platform",
-    description:
-      "Mobile app simplifying hospital appointments by connecting patients directly with verified doctors.",
-    details: {
-      overview:
-        "Led a team of five in the end-to-end development of HealthSync, a mobile application designed to democratize healthcare access by eliminating third-party intermediaries and connecting patients directly with verified doctors.",
-      contributions: [
-        {
-          title: "Full-Stack Architecture",
-          content:
-            "Developed a cross-platform mobile experience using React Native (TypeScript) for the frontend and Django (Python) with MongoDB for the backend.",
-        },
-        {
-          title: "Real-Time Communication",
-          content:
-            "Integrated live chat and automated email notifications to facilitate seamless, real-time interactions between medical professionals and patients.",
-        },
-        {
-          title: "Secure Infrastructure",
-          content:
-            "Implemented a robust doctor verification system using Firebase Storage for secure credential management and the DeepSeek API for intelligent system features.",
-        },
-        {
-          title: "Deployment & Impact",
-          content:
-            "Engineered features for appointment booking and API-based messaging, aiming to provide a scalable solution for underserved communities.",
-        },
-      ],
-    },
-    tags: [
-      "React Native",
-      "Firebase",
-      "Django",
-      "MongoDB",
-      "Software Project Management",
-      "TypeScript",
-      "Android",
-    ],
-    githubUrl: "https://github.com/HarisTahir2003/SE-Project-Group-9",
-    images: [
-      "/healthsync-1.webp",
-      "/healthsync-2.webp",
-      "/healthsync-3.webp",
-      "/healthsync-4.webp",
-      "/healthsync-5.webp",
-      "/healthsync-6.webp",
-    ],
-    pdfs: [{ name: "Project Report", url: "/HealthSync_Report.pdf" }],
-  },
-  {
-    category: "Software Engineering",
-    title:
-      "Ludo Game",
-    description:
-      "A full-stack multiplayer Ludo game featuring server-authoritative architecture, real-time WebSockets, dynamic matchmaking, and AI fault tolerance.",
-    details: {
-      overview:
-        "Engineered a full-stack, server-authoritative multiplayer Ludo game featuring real-time WebSocket communication, dynamic matchmaking, and automated AI fault tolerance.",
-      contributions: [
-        {
-          title: "Event-Driven Architecture",
-          content:
-            "Implemented a bi-directional, real-time communication layer using Socket.IO to handle synchronized gameplay events, including dice rolls, token movements, in-game room chats, and live activity logs.",
-        },
-        {
-          title: "Server-Authoritative Logic",
-          content:
-            "Developed a complete Ludo rules engine in TypeScript to compute valid moves, safe-zone captures, turn timers, and victory standings entirely on the backend to eliminate client-side manipulation.",
-        },
-        {
-          title: "Matchmaking & Resiliency",
-          content:
-            "Built a dynamic room management system supporting live lobby broadcasting, automatic player color allocation, session restoration, and a 10-second AI takeover fallback to maintain gameplay continuity if a user disconnects.",
-        },
-      ],
-    },
-    tags: [
-      "React",
-      "Typescript",
-      "MongoDB",
-      "Node.js",
-      "REST APIs",
-      "MERN Stack",
-    ],
-    githubUrl: "https://github.com/HarisTahir2003/ludo-game",
-    images: ["/ludo1.webp", "/ludo2.webp", "/ludo3.webp", "/ludo4.webp", "/ludo5.webp", "/ludo6.webp"],
-    pdfs: [],
-  },
-  {
     category: "DL/GenAI",
-    title: "Financial Intelligence System",
+    title: "HippoRAG Replication & Evaluation",
     description:
-      "Agentic system for automated extraction, summarization, and cross-document analysis of SEC 10-K filings.",
-    details: {
-      overview:
-        "Designed and implemented a modular agentic NLP system for high-fidelity financial intelligence over dense SEC 10-K filings, enabling automated QnA, summarization, and multi-year trend inference.",
-      contributions: [
-        {
-          title: "RAG-based Financial QnA",
-          content:
-            "Built a Retrieval-Augmented Generation pipeline using Gemini 2.0 Flash and ChromaDB, significantly improving factual faithfulness using prompt chaining and few-shot strategies.",
-        },
-        {
-          title: "Earnings Call Summarization",
-          content:
-            "Engineered an LLM-powered summarization engine achieving a 4.39/5.0 G-Eval coherence score for professional investment memos.",
-        },
-        {
-          title: "Agentic Financial Analysis",
-          content:
-            "Designed a Plan-and-Execute agent capable of multi-year cross-document financial analysis with custom Python calculator tools.",
-        },
-        {
-          title: "Document Engineering",
-          content:
-            "Implemented semantic chunking and HTML-to-Markdown table conversion to preserve complex financial tables.",
-        },
-      ],
-    },
-    tags: [
-      "RAG",
-      "LangChain",
-      "ChromaDB",
-      "Gemini",
-      "Financial Analysis",
-      "Prompt Engineering",
-    ],
-    githubUrl:
-      "https://github.com/HarisTahir2003/NLP_Applications_for_Financial_Reports",
-    images: ["/Fin-1.webp", "/Fin-2.webp", "/Fin-3.webp"],
-    pdfs: [{ name: "Project Report", url: "/Finance_Project_Report.pdf" }],
-  },
-  {
-    category: "DL/GenAI",
-    title:
-      "Biologically-Inspired HippoRAG Reproduction",
-    description:
-      "HippoRAG retrieval framework mapping human memory indexing theory onto LLMs and Knowledge Graphs for multi-hop question answering.",
+      "Replication and evaluation of the HippoRAG retrieval framework using Knowledge Graphs.",
     details: {
       overview:
         "Reengineered and evaluated HippoRAG, a retrieval framework mapping human memory indexing theory onto LLMs and Knowledge Graphs for multi-hop question answering.",
@@ -475,7 +377,7 @@ export const projects: Project[] = [
         {
           title: "Modular System Architecture",
           content:
-            "Engineered a clean-room Python package using igraph for accelerated PageRank routing, abstract LLM layers, and a hybrid dense-graph scoring engine.",
+            "Engineered a custom Python package using igraph for accelerated PageRank routing, abstract LLM layers, and a hybrid dense-graph scoring engine.",
         },
         {
           title: "Resource Optimization",
@@ -483,114 +385,202 @@ export const projects: Project[] = [
             "Executed the pipeline using 4-bit quantized open-weight models on cloud GPUs, implementing state checkpointing and soft time guards across 40 compute hours.",
         },
         {
-          title: "Resource Optimization",
+          title: "Analytical Evaluation",
           content:
             "Benchmarked multi-hop recall metrics and analyzed open-weight LLM failure modes, compiling the insights into a formal NeurIPS style technical report.",
         },
       ],
     },
-    tags: [
-      "GraphRAG",
-      "Knowledge Graphs",
-      "Data Engineering",
-      "Data Analysis",
-    ],
-    githubUrl: "https://github.com/HarisTahir2003/ludo-game",
+    tags: ["GraphRAG", "Knowledge Graphs", "Data Engineering", "Data Analysis"],
+    githubUrl: "https://github.com/HarisTahir2003/Data-Mining-Project",
     images: [],
     pdfs: [{ name: "Project Report", url: "/Final Report HippoRAG.pdf" }],
   },
   {
-    category: "AI/ML",
-    title: "Urdu Text Classification",
+    category: "Software Engineering",
+    title: "Multiplayer Ludo Game",
     description:
-      "End-to-end NLP pipeline for classifying Urdu news articles across multiple categories.",
+      "A full-stack, server-authoritative multiplayer Ludo game with real-time WebSockets.",
     details: {
       overview:
-        "Developed a comprehensive NLP pipeline for Urdu-language news classification, addressing the challenges of low-resource language processing.",
+        "Engineered a full-stack, server-authoritative multiplayer Ludo game featuring real-time WebSocket communication, dynamic matchmaking, and automated AI fault tolerance.",
       contributions: [
         {
-          title: "Data Collection",
+          title: "Event-Driven Architecture",
           content:
-            "Scraped and curated 2,750+ Urdu news articles from multiple websites using custom Python scrapers.",
+            "Implemented a bi-directional, real-time communication layer using Socket.IO to handle synchronized gameplay events, including dice rolls, token movements, in-game room chats, and live activity logs.",
+        },
+        {
+          title: "Server-Authoritative Logic",
+          content:
+            "Developed a complete Ludo rules engine in TypeScript to compute valid moves, safe-zone captures, turn timers, and victory standings entirely on the backend.",
+        },
+        {
+          title: "Matchmaking & Resiliency",
+          content:
+            "Built a dynamic room management system supporting live lobby broadcasting, automatic player color allocation, session restoration, and a 10-second AI takeover fallback to maintain gameplay continuity if a user disconnects.",
+        },
+        {
+          title: "State Persistence & Metrics",
+          content:
+            "Designed a MongoDB schema and REST API to manage user accounts, calculate ranked coin reward distributions based on player counts, and track historical match data for a global leaderboard.",
+        },
+      ],
+    },
+    tags: ["React", "TypeScript", "MongoDB", "Node.js", "REST APIs", "Socket.IO"],
+    githubUrl: "https://github.com/HarisTahir2003/ludo-game",
+    images: ["/ludo1.webp", "/ludo2.webp", "/ludo3.webp", "/ludo4.webp", "/ludo5.webp", "/ludo6.webp"],
+    pdfs: [],
+  },
+  {
+    category: "DL/GenAI",
+    title: "Agentic 10-K Intelligence System",
+    description:
+      "Agentic NLP pipeline for automated extraction and summarization of SEC 10-K filings.",
+    details: {
+      overview:
+        "Developed a modular NLP pipeline to automate extraction, summarization, and cross-document trend inference from high-density SEC 10-K filings.",
+      contributions: [
+        {
+          title: "Extractive QnA",
+          content:
+            "Built a RAG pipeline using Gemini 2.0 Flash and ChromaDB, boosting RAGAS Faithfulness from 0.18 to 0.74 through prompting techniques like Chain-of-Thought and Few-Shot prompting.",
+        },
+        {
+          title: "Financial Summarization",
+          content:
+            "Engineered a summarization engine for earnings transcripts, achieving a 4.39/5.0 G-Eval coherence score for professional investment memos.",
+        },
+        {
+          title: "Agentic Research Agent",
+          content:
+            "Designed an autonomous Plan-and-Execute agent for multi-year analysis across 50 filings, utilizing a custom Python calculator tool to ensure mathematical precision for complex ratios.",
+        },
+        {
+          title: "Data Engineering",
+          content:
+            "Implemented semantic element partitioning and custom HTML-to-Markdown table conversion to maintain the structural integrity of complex financial tables.",
+        },
+      ],
+    },
+    tags: ["RAG", "LangChain", "ChromaDB", "Gemini", "Prompt Engineering"],
+    githubUrl: "https://github.com/HarisTahir2003/NLP_Applications_for_Financial_Reports",
+    images: ["/Fin-1.webp", "/Fin-2.webp", "/Fin-3.webp"],
+    pdfs: [{ name: "Project Report", url: "/Finance_Project_Report.pdf" }],
+  },
+  {
+    category: "Software Engineering",
+    title: "HealthSync",
+    description:
+      "Android healthcare mobile application connecting patients directly with verified doctors.",
+    details: {
+      overview:
+        "Led a team of five in the end-to-end development of HealthSync, an android mobile application designed to democratize healthcare access by eliminating third-party intermediaries and connecting patients directly with verified doctors.",
+      contributions: [
+        {
+          title: "Full-Stack Architecture",
+          content:
+            "Built a healthcare mobile app using React Native (TypeScript) with a Django (Python) and MongoDB backend.",
+        },
+        {
+          title: "Core Healthcare Features",
+          content:
+            "Engineered appointment booking, a live chat system, and automated email notifications to facilitate seamless communication between medical professionals and patients.",
+        },
+        {
+          title: "Secure Credential Management",
+          content:
+            "Implemented a robust doctor verification system utilizing Firebase Storage for secure document and credential handling.",
+        },
+        {
+          title: "AI Chatbot Integration",
+          content:
+            "Integrated the DeepSeek API to build an automated chatbot that handles patient queries on the platform.",
+        },
+      ],
+    },
+    tags: ["React Native", "Firebase", "Django", "MongoDB", "TypeScript", "Android", "DeepSeek API"],
+    githubUrl: "https://github.com/HarisTahir2003/SE-Project-Group-9",
+    images: ["/healthsync-1.webp", "/healthsync-2.webp", "/healthsync-3.webp", "/healthsync-4.webp", "/healthsync-5.webp", "/healthsync-6.webp"],
+    pdfs: [{ name: "Project Report", url: "/HealthSync_Report.pdf" }],
+  },
+  {
+    category: "AI/ML",
+    title: "Urdu Text Classification using Machine Learning models",
+    description:
+      "End-to-end NLP pipeline for multi-class categorization of Urdu news articles.",
+    details: {
+      overview:
+        "Developed a comprehensive NLP pipeline to categorize Urdu-language news articles into five distinct categories: Entertainment, Business, Sports, Technology, and International. This project addressed the challenges of processing low-resource languages by implementing custom scraping and specialized linguistic preprocessing.",
+      contributions: [
+        {
+          title: "Data Acquisition",
+          content:
+            "Engineered custom Python scripts to scrape 2,750+ articles from premier news outlets including Geo Urdu, Jang, and Dunya News.",
         },
         {
           title: "Linguistic Preprocessing",
           content:
-            "Applied Urdu-specific normalization, stemming, lemmatization, and stopword removal using the LughaatNLP library.",
+            "Leveraged the LughaatNLP library to implement text normalization, including lemmatization, stemming, and stopword removal tailored for Urdu script.",
         },
         {
-          title: "Model Benchmarking",
+          title: "Comparative Modeling",
           content:
-            "Evaluated Naive Bayes, Logistic Regression, and Neural Network models for multi-class classification.",
+            "Built and evaluated three supervised learning architectures: Multinomial Naive Bayes, Multiclass Logistic Regression, and a Feedforward Neural Network.",
         },
         {
-          title: "Performance Optimization",
+          title: "Performance Metrics",
           content:
-            "Achieved a top accuracy of 97.45% and a 0.97 F1-score using the feedforward neural network model.",
+            "Achieved a peak accuracy of 97.45% and an F1-score of 0.97 using the Neural Network model, outperforming traditional statistical baselines.",
+        },
+        {
+          title: "End-to-End Documentation",
+          content:
+            "Authored a technical report visualizing model comparisons and detailing the practical application of deep learning in regional language processing.",
         },
       ],
     },
-    tags: [
-      "Machine Learning",
-      "NLP",
-      "Naive Bayes",
-      "Neural Networks",
-      "Logistic Regression",
-      "Web Scraping",
-    ],
+    tags: ["NLP", "Naive Bayes", "Neural Networks", "Logistic Regression", "Web Scraping"],
     githubUrl: "https://github.com/HarisTahir2003/Machine-Learning-Project",
     images: [],
     pdfs: [{ name: "Project Report", url: "/ML_Project_Report.pdf" }],
   },
   {
     category: "AI/ML",
-    title: "Micro-Robot Motion Trajectory Prediction",
+    title: "Micro-Robot Motion Prediction: ML Algorithm Analysis",
     description:
-      "Predictive modeling of micro-robot trajectories in obstacle-dense environments.",
+      "Predictive modeling system to track micro-robot trajectories in obstacle-dense environments.",
     details: {
       overview:
-        "Built a machine learning system to forecast micro-robot motion paths using temporal feature engineering and classical regression techniques.",
+        "Developed a predictive modeling system to track micro-robot trajectories in obstacle-dense environments using K-Nearest Neighbors (KNN) and Regression Trees.",
       contributions: [
         {
-          title: "Algorithm Design",
+          title: "Custom Algorithm Engineering",
           content:
-            "Implemented a K-Nearest Neighbors (KNN) model from scratch with custom distance metrics.",
+            "Built a KNN algorithm from scratch in Python using custom Euclidean distance and tie-handling functions, optimizing model performance by evaluating RMSE trends against varying k-values to prevent overfitting.",
         },
         {
-          title: "Time-Series Engineering",
+          title: "Temporal & Predictive Modeling",
           content:
-            "Designed lookback-window feature extraction to model temporal dependencies in motion data.",
+            "Implemented a temporal 'lookback' mechanism to capture time-series dependencies, enabling the model to predict future coordinates based on historical movement data.",
         },
         {
-          title: "Model Evaluation",
+          title: "Trajectory Visualization & Validation",
           content:
-            "Analyzed RMSE trends across varying hyperparameters to optimize prediction accuracy.",
-        },
-        {
-          title: "Visualization",
-          content:
-            "Built trajectory visualizations to compare predicted vs. actual robot motion paths.",
+            "Developed a comparative visualization suite to map actual robot paths against algorithmic predictions, validating the model's spatial accuracy and generalization.",
         },
       ],
     },
-    tags: [
-      "Machine Learning",
-      "Time Series",
-      "KNN",
-      "Regression Trees",
-      "Scikit-Learn",
-      "Data Visualization",
-    ],
+    tags: ["Machine Learning", "Time Series", "KNN", "Regression Trees", "Scikit-Learn", "Data Visualization"],
     githubUrl: "https://github.com/HarisTahir2003/AI_Project",
     images: ["/AIProj-1.webp", "/AIProj-2.webp"],
     pdfs: [],
   },
   {
     category: "AI/ML",
-    title:
-      "Study of Socioeconomic Inequality & Career Aspirations",
+    title: "Study of Socioeconomic Inequality & Career Aspirations",
     description:
-      "Statistical analysis of how socioeconomic inequality shapes academic major selection and career aspirations among university students.",
+      "Statistical analysis of socioeconomic impacts on university major selection and career paths.",
     details: {
       overview:
         "Co-led a team of four in the end-to-end development of a data science research project analyzing the impact of socioeconomic inequality on academic major selection and career aspirations among university students, using real survey data and statistical modeling to derive actionable insights.",
@@ -625,25 +615,6 @@ export const projects: Project[] = [
     images: ["/Data-1.webp", "/Data-2.webp", "/Data-3.webp"],
     pdfs: [{ name: "Project Report", url: "/DataScience_Project.pdf" }],
   },
-
-
-
-
-
-
-
-
-  // TODO: add more projects here ↓ (copy the shape above)
-  // {
-  //   category: "AI/ML",
-  //   title: "",
-  //   description: "",
-  //   details: { overview: "", contributions: [{ title: "", content: "" }] },
-  //   tags: [],
-  //   githubUrl: "",
-  //   images: [],
-  //   pdfs: [],
-  // },
 ];
 
 /* -------------------------------------------------------------------------- */

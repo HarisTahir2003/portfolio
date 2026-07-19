@@ -9,19 +9,16 @@ import {
   ChevronLeft,
   ChevronRight,
   Image as ImageIcon,
-  Expand,
 } from "lucide-react";
 import ProjectCard from "@/components/ProjectCard";
 import SectionHeading from "@/components/SectionHeading";
 import Portal from "@/components/Portal";
-import ProjectsPreview from "@/components/ProjectsPreview";
 import { projects, projectCategories, type Project } from "@/data/portfolio";
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState<string>("All");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-  const [previewOpen, setPreviewOpen] = useState(false);
 
   const filteredProjects = projects.filter((p) =>
     activeFilter === "All" ? true : p.category === activeFilter
@@ -75,14 +72,6 @@ export default function Projects() {
               accent="work"
               description="Machine learning, generative AI, and full-stack engineering."
             />
-            <button
-              type="button"
-              onClick={() => setPreviewOpen(true)}
-              className="-mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-accent/20 transition-all hover:bg-accent-bright active:scale-[0.98]"
-            >
-              <Expand size={16} />
-              Full Preview
-            </button>
           </div>
 
           {/* Filters */}
@@ -321,13 +310,6 @@ export default function Projects() {
         )}
       </AnimatePresence>
       </Portal>
-
-      {/* Full-screen scroll-driven horizontal preview (all projects) */}
-      <ProjectsPreview
-        projects={projects}
-        open={previewOpen}
-        onClose={() => setPreviewOpen(false)}
-      />
     </section>
   );
 }

@@ -25,7 +25,7 @@ export default function ProjectCard({
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.97 }}
       transition={{ duration: 0.3 }}
-      className="group relative flex h-full cursor-pointer flex-col rounded-2xl border border-border bg-bg-card p-6 text-left transition-all duration-300 hover:border-accent hover:shadow-[0_0_0_1px_var(--accent-ring),0_20px_40px_-20px_rgba(0,0,0,0.6)]"
+      className="group relative flex h-[320px] overflow-hidden cursor-pointer flex-col rounded-2xl border border-border bg-bg-card p-6 text-left transition-all duration-300 hover:border-accent hover:shadow-[0_0_0_1px_var(--accent-ring),0_20px_40px_-20px_rgba(0,0,0,0.6)]"
     >
       <div className="flex h-full flex-col">
         <div className="mb-3 flex items-start justify-between gap-4">
@@ -40,7 +40,7 @@ export default function ProjectCard({
           </span>
         </div>
 
-        <h3 className="text-lg font-semibold text-ink transition-colors group-hover:text-accent-bright">
+        <h3 className="line-clamp-2 text-lg font-semibold text-ink transition-colors group-hover:text-accent-bright">
           {project.title}
         </h3>
 
