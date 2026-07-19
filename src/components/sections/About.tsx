@@ -73,14 +73,19 @@ export default function About() {
                 <p className="ml-4"><span className="text-green-400">&quot;location&quot;</span>: <span className="text-green-400">&quot;{profile.location}&quot;</span>,</p>
                 <p className="ml-4"><span className="text-green-400">&quot;resume&quot;</span>: <span className="text-purple-400">lambda</span>: <span className="text-yellow-300">download</span>(<span className="text-green-400">&quot;Haris_Resume.pdf&quot;</span>)</p>
                 <p>{"}"}</p>
-                <br />
-                <button 
-                  onClick={() => setCvOpen(true)} 
-                  className="mt-4 rounded border border-green-500/30 bg-slate-800 px-6 py-3 text-green-400 shadow-lg transition hover:bg-slate-700"
-                >
-                  &gt;_ python -c &quot;developer[&apos;resume&apos;]()&quot;
-                </button>
               </div>
+
+              {/* Status Bar */}
+              <button 
+                onClick={() => setCvOpen(true)} 
+                className="group flex w-full items-center justify-between border-t-2 border-accent bg-accent/90 px-6 py-4 font-sans transition-colors hover:bg-accent"
+              >
+                <span className="flex items-center gap-3 font-bold tracking-wide text-white">
+                  <Download size={18} />
+                  Download Resume
+                </span>
+                <span className="font-mono text-sm text-white/70 transition group-hover:text-white">execute_resume()</span>
+              </button>
             </div>
             </Reveal>
           </div>

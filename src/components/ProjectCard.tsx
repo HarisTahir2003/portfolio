@@ -25,7 +25,7 @@ export default function ProjectCard({
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.97 }}
       transition={{ duration: 0.3 }}
-      className="group relative flex h-[320px] overflow-hidden cursor-pointer flex-col rounded-2xl border border-border bg-bg-card p-6 text-left transition-all duration-300 hover:border-accent hover:shadow-[0_0_0_1px_var(--accent-ring),0_20px_40px_-20px_rgba(0,0,0,0.6)]"
+      className="group relative flex h-[270px] overflow-hidden cursor-pointer flex-col rounded-2xl border border-border bg-bg-card p-6 text-left transition-all duration-300 hover:border-accent hover:shadow-[0_0_0_1px_var(--accent-ring),0_20px_40px_-20px_rgba(0,0,0,0.6)]"
     >
       <div className="flex h-full flex-col">
         <div className="mb-3 flex items-start justify-between gap-4">
@@ -48,17 +48,19 @@ export default function ProjectCard({
           {project.description}
         </p>
 
-        <div className="mt-5 flex flex-wrap gap-2">
-          {project.tags.slice(0, 3).map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full border border-border px-2.5 py-0.5 text-xs font-medium text-ink-muted"
-            >
-              {tag}
-            </span>
-          ))}
+        <div className="mt-5 flex items-center gap-2">
+          <div className="flex min-w-0 flex-1 items-center gap-2 overflow-hidden">
+            {project.tags.slice(0, 3).map((tag) => (
+              <span
+                key={tag}
+                className="shrink-0 rounded-full border border-border px-2.5 py-0.5 text-xs font-medium text-ink-muted"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
           {project.tags.length > 3 && (
-            <span className="px-1 py-0.5 text-xs text-ink-faint">
+            <span className="shrink-0 px-1 py-0.5 text-xs text-ink-faint">
               +{project.tags.length - 3}
             </span>
           )}
