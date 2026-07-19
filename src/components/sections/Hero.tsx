@@ -157,26 +157,36 @@ function Typewriter({
 // Decorative, non-interactive code snippets scattered in the background.
 const SNIPPETS: { code: string; className: string }[] = [
   {
-    code: `import torch
-import torch.nn as nn
+    code: `BEGIN;
+SELECT stock INTO current_stock
+FROM inventory
+WHERE item_id = $1 FOR UPDATE;
 
-class ResNet(nn.Module):
-    def __init__(self):
-        super(ResNet, self).__init__()`,
+UPDATE inventory
+SET stock = current_stock - $2
+WHERE item_id = $1;
+COMMIT;`,
     className: "right-6 top-28 md:right-16 lg:right-24",
   },
   {
-    code: `# Analyzing fiscal impact
-df['growth_rate'] = df['gdp'].pct_change()
-model.fit(X_train, y_train)`,
+    code: `const completion = await openai.chat.completions.create({
+  model: "gpt-4o",
+  temperature: 0.1,
+  messages: [
+    { role: "system", content: "Extract structured data." },
+    { role: "user", content: docText }
+  ]
+});`,
     className: "right-4 bottom-40 md:right-20 lg:right-28",
   },
   {
-    code: `model.compile(
-    optimizer='adam',
-    loss='categorical_crossentropy',
-    metrics=['accuracy']
-)`,
+    code: `const { data, error } = await supabase
+  .from('workflows')
+  .select('*, steps(*)')
+  .eq('status', 'active');
+
+if (error) throw error;
+return Response.json(data);`,
     className: "left-4 bottom-28 md:left-12 lg:left-20",
   },
 ];

@@ -125,20 +125,20 @@ export type BlogPost = {
 
 export const profile: Profile = {
   name: "Haris Tahir Rana",
-  title: "Machine Learning & Data Science Engineer",
-  tagline: "Building intelligent systems that turn complex data into clarity.",
+  title: "Software Engineer & AI Automation Expert",
+  tagline: "I build scalable web applications and practical AI pipelines that solve complex operational bottlenecks for businesses.",
   location: "Lahore, Pakistan",
-  education: "B.S. Computer Science — LUMS",
+  education: "Co-Founder & COO @ Arthus Systems",
   email: "haristahirrana@gmail.com",
   resumeUrl: "/Haris_Resume.pdf",
   photo: "/img.webp",
   // Transparent cut-out PNG for the ProfileCard. Falls back to `photo` until added.
   avatar: "/avatar.webp",
   shortBio:
-    "Computer Science graduate specializing in Machine Learning, Deep Learning, and Data Science.",
+    "Co-Founder & COO at Arthus Systems, specializing in Custom Software Engineering and AI Automation.",
   longBio: [
-    "I'm Haris, a Computer Science graduate from the Lahore University of Management Sciences (LUMS), with a focus on building intelligent systems and exploring the depths of Machine Learning and Deep Learning.",
-    "My work spans AI-powered systems across healthcare, finance, and research — from end-to-end deep learning pipelines for medical imaging to agentic NLP systems for financial intelligence. I care about building things that are both technically rigorous and genuinely useful.",
+    "I'm Haris, a Software Engineer and AI Automation Expert. As the Co-Founder and COO of Arthus Systems, I design system logic, write core code, and build practical AI tools that save teams hours of manual work.",
+    "My work spans full-stack software delivery, practical AI pipelines, and in-house SaaS products. From crafting end-to-end inventory management systems to building intelligent NLP pipelines, I focus on building things that are fast, secure, and genuinely useful for businesses.",
     "Outside of work, I enjoy playing tennis and cricket, reading history and poetry, and tinkering with new technologies.",
   ],
   social: [
