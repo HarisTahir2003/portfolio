@@ -7,150 +7,106 @@ import { ArrowUpRight } from "lucide-react";
 import Icon from "@/components/Icon";
 import { profile } from "@/data/portfolio";
 
-// --- Hero text animation ---
-const NAME_CHARS = Array.from(profile.name); // Array.from = surrogate-safe split
-const BLUR_LETTERS = true; // kill-switch for WebKit clip+blur quirks
+const SCRAMBLE_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";
 
-const nameContainer: Variants = {
-  hidden: {},
-  visible: { transition: { delayChildren: 0.15, staggerChildren: 0.045 } },
-};
-const nameLetter: Variants = {
-  hidden: {
-    opacity: 0,
-    y: "0.45em",
-    filter: BLUR_LETTERS ? "blur(6px)" : "blur(0px)",
-  },
-  visible: {
-    opacity: 1,
-    y: "0em",
-    filter: "blur(0px)",
-    transition: {
-      y: { type: "spring", stiffness: 380, damping: 30, mass: 0.7 },
-      opacity: { duration: 0.35, ease: "easeOut" },
-      filter: { duration: 0.4, ease: "easeOut" },
-    },
-  },
-};
-
-/** Per-letter staggered metallic reveal + one shine sweep. Calls onDone when
- *  the last letter has settled (or immediately when animation is skipped). */
-function AnimatedName({ animate, onDone }: { animate: boolean; onDone: () => void }) {
-  const [shineOn, setShineOn] = useState(false);
-
-  // Not animating (SSR/first paint/reduced motion) → plain visible heading.
-  if (!animate) {
-    return (
-      <h1 className="font-display text-metallic mt-5 text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
-        {profile.name}
-      </h1>
-    );
-  }
-
-  const lastIndex = NAME_CHARS.length - 1;
-  return (
-    <motion.h1
-      variants={nameContainer}
-      initial="hidden"
-      animate="visible"
-      aria-label={profile.name}
-      className={`name-metallic font-display relative mt-5 text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl ${
-        shineOn ? "is-shining" : ""
-      }`}
-    >
-      {NAME_CHARS.map((ch, i) => (
-        <motion.span
-          key={i}
-          aria-hidden
-          variants={nameLetter}
-          onAnimationComplete={
-            i === lastIndex
-              ? () => {
-                  setShineOn(true);
-                  onDone();
-                }
-              : undefined
-          }
-          className="name-letter inline-block whitespace-pre will-change-transform"
-        >
-          {ch === " " ? " " : ch}
-        </motion.span>
-      ))}
-    </motion.h1>
-  );
-}
-
-const TITLE_CHARS = Array.from(profile.title);
-const TITLE_STAGGER = 0.065; // ~65ms per character
-
-/** Per-character title reveal. The gradient lives on the parent (so it stays
- *  whole — slicing a clipped gradient per-char would break it); each character
- *  is an inline span whose opacity is staggered in left-to-right, with a caret
- *  riding the reveal edge. Fires onDone when the last char appears. */
-function Typewriter({
+function ScrambleText({
+  text,
   animate,
   start,
   onDone,
+  className,
+  scrambleColor,
+  finalColor,
+  as: Tag = "span",
 }: {
+  text: string;
   animate: boolean;
   start: boolean;
-  onDone: () => void;
+  onDone?: () => void;
+  className?: string;
+  scrambleColor: string;
+  finalColor: string;
+  as?: React.ElementType;
 }) {
-  const [done, setDone] = useState(false);
+  const [iterations, setIterations] = useState<number[]>([]);
 
-  // Static (SSR / first paint / reduced motion): full title, no animation.
+  useEffect(() => {
+    if (!animate || !start) return;
+
+    let isCancelled = false;
+    const textArray = Array.from(text);
+    const maxIterationsArray = textArray.map((_, i) => 3 + i * 1);
+    const currentIterations = textArray.map(() => 0);
+
+    let animationFrameId: number;
+    let lastTime = performance.now();
+
+    const tick = (time: number) => {
+      if (isCancelled) return;
+
+      if (time - lastTime < 25) {
+        animationFrameId = requestAnimationFrame(tick);
+        return;
+      }
+      lastTime = time;
+
+      let allDone = true;
+      for (let i = 0; i < currentIterations.length; i++) {
+        if (currentIterations[i] < maxIterationsArray[i]) {
+          currentIterations[i]++;
+          allDone = false;
+        }
+      }
+
+      setIterations([...currentIterations]);
+
+      if (allDone) {
+        if (onDone) onDone();
+      } else {
+        animationFrameId = requestAnimationFrame(tick);
+      }
+    };
+
+    animationFrameId = requestAnimationFrame(tick);
+
+    return () => {
+      isCancelled = true;
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [text, animate, start]);
+
   if (!animate) {
-    return (
-      <p className="text-gradient mt-5 text-xl font-medium md:text-3xl">
-        {profile.title}
-      </p>
-    );
+    return <Tag className={className}>{text}</Tag>;
   }
 
-  const lastIndex = TITLE_CHARS.length - 1;
+  if (!start && iterations.length === 0) {
+    return <Tag className={className}><span className="opacity-0">{text}</span></Tag>;
+  }
+
+  const textArray = Array.from(text);
+  const maxIterationsArray = textArray.map((_, i) => 3 + i * 1);
+
   return (
-    <p
-      aria-label={profile.title}
-      className="mt-5 inline-flex items-center justify-center text-xl font-medium md:text-3xl"
-    >
-      <motion.span
-        className="text-gradient"
-        initial="hidden"
-        animate={start ? "visible" : "hidden"}
-        variants={{
-          hidden: {},
-          visible: { transition: { staggerChildren: TITLE_STAGGER } },
-        }}
-      >
-        {TITLE_CHARS.map((ch, i) => (
-          <motion.span
-            key={i}
-            aria-hidden
-            variants={{
-              hidden: { opacity: 0 },
-              visible: { opacity: 1, transition: { duration: 0.01 } },
-            }}
-            onAnimationComplete={
-              i === lastIndex
-                ? () => {
-                    setDone(true);
-                    onDone();
-                  }
-                : undefined
-            }
-            className="whitespace-pre"
+    <Tag className={className}>
+      {textArray.map((char, i) => {
+        if (char === " ") return <span key={i}> </span>;
+        
+        const isDecoded = iterations[i] >= maxIterationsArray[i];
+        const displayChar = isDecoded 
+          ? char 
+          : SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
+          
+        return (
+          <span 
+            key={i} 
+            className={isDecoded ? finalColor : scrambleColor}
+            style={isDecoded ? { textShadow: "0 0 10px rgba(255,255,255,0.2)" } : undefined}
           >
-            {ch}
-          </motion.span>
-        ))}
-      </motion.span>
-      {!done && (
-        <span
-          aria-hidden
-          className="animate-caret-blink ml-0.5 inline-block h-[1em] w-[0.08em] bg-accent-bright align-middle"
-        />
-      )}
-    </p>
+            {displayChar}
+          </span>
+        );
+      })}
+    </Tag>
   );
 }
 
@@ -259,12 +215,26 @@ export default function Hero() {
           {profile.education} · {profile.location}
         </motion.p>
 
-        <AnimatedName animate={animate} onDone={() => setStep("title")} />
+        <ScrambleText 
+          text={profile.name}
+          animate={animate}
+          start={true}
+          onDone={() => setStep("title")}
+          as="h1"
+          className="mt-5 text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl font-mono"
+          scrambleColor="text-green-400"
+          finalColor="text-white"
+        />
 
-        <Typewriter
+        <ScrambleText
+          text={profile.title.toUpperCase()}
           animate={animate}
           start={effectiveStep !== "name"}
           onDone={() => setStep("rest")}
+          as="p"
+          className="mt-5 text-xl tracking-widest font-mono text-center"
+          scrambleColor="text-accent"
+          finalColor="text-accent-bright"
         />
 
         <motion.p
