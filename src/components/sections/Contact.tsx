@@ -16,7 +16,7 @@ export default function Contact() {
           <Reveal>
             <div>
               {/* Heading */}
-              <span className="eyebrow">05 — Contact</span>
+              <span className="eyebrow">06 — Contact</span>
               <h2 className="font-display mt-3 text-3xl font-semibold tracking-tight text-ink md:text-5xl">
                 Let&apos;s <span className="text-gradient">talk</span>
               </h2>

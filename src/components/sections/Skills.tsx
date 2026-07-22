@@ -29,7 +29,7 @@ export default function Skills() {
     <section id="skills" className="px-6 py-24 md:py-32">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
-          eyebrow="04 — Skills"
+          eyebrow="05 — Skills"
           title="Technical"
           accent="toolkit"
           description="The languages, frameworks, and concepts I work with day to day."

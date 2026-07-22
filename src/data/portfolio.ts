@@ -59,6 +59,16 @@ export type Experience = {
   featured?: boolean;
 };
 
+export type Education = {
+  institution: string;
+  degree: string;
+  duration: string;
+  location: string;
+  gpa?: string;
+  details: string[];
+  featured?: boolean;
+};
+
 export type Contribution = {
   title: string;
   content: string;
@@ -159,6 +169,42 @@ export const profile: Profile = {
     },
   ],
 };
+
+/* -------------------------------------------------------------------------- */
+/*  EDUCATION                                                                  */
+/* -------------------------------------------------------------------------- */
+
+export const educations: Education[] = [
+  {
+    institution: "Lahore University of Management Sciences",
+    location: "Lahore, Pakistan",
+    degree: "BSc (Hons.) in Computer Science (Artificial Intelligence Specialization)",
+    duration: "Aug 2022 – Jul 2026",
+    gpa: "3.37/4.0",
+    featured: true,
+    details: [
+      "Relevant Courses: Data Mining, Data Science, Databases, Deep Learning, Generative AI, NLP, Software Engineering"
+    ]
+  },
+  {
+    institution: "Lahore Grammar School",
+    location: "Lahore, Pakistan",
+    degree: "A-Level - 3 A* 1 B; SAT Score - 1510",
+    duration: "Aug 2020 – Jun 2022",
+    details: [
+      "Student council prefect"
+    ]
+  },
+  {
+    institution: "Scholastic Islamiah",
+    location: "Lahore, Pakistan",
+    degree: "O-Level - 8 A*s",
+    duration: "2017 – 2019",
+    details: [
+      "Head of mathematics society"
+    ]
+  }
+];
 
 /* -------------------------------------------------------------------------- */
 /*  EXPERIENCE                                                                 */

@@ -67,7 +67,7 @@ export default function Projects() {
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
             <SectionHeading
-              eyebrow="03 — Projects"
+              eyebrow="04 — Projects"
               title="Selected"
               accent="work"
               description="Machine learning, generative AI, and full-stack engineering."
